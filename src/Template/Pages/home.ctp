@@ -41,51 +41,17 @@ $cakeDescription = 'Buyhome';
     <?php $cell = $this->cell('Project');
       echo $cell;
     ?>
+    <a href="#" class="see-more">Selengkapnya...</a>
   </div>
     
 
-<!-- our-services -->
-  <div class="our-service">
-    <h1>Layanan Kami</h1>
-    <ul>
-      <li>
-        <span>Mudah digunakan dan transparan</span>
-        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-      </li>
-      <li>
-        <span>Harga jujur <br/>dan lebih murah</span>
-        <i class="fa fa-money" aria-hidden="true"></i>
-      </li>
-      <li>
-        <span>Jaminan pembelian online yang aman</span>
-        <i class="fa fa-lock" aria-hidden="true"></i>
-      </li>
-      <li>
-        <span>Dapat dijual kembali melalui forum kami</span>
-        <i class="fa fa-users" aria-hidden="true"></i>
-      </li>
-    </ul>
-  </div>
+  <!-- Layanan kami -->
+  <?= $this->element('layanan_kami'); ?>
 
-  <?php echo $this->fetch('dashboard'); ?>
-  
-  <div class="partner-section">
-    <h1>Mitra kami</h1>
-    <ul class="partner-list owl-carousel">
-      <li class="item">
-        <?= $this->Html->image('partner/partner1.png', ['alt' => 'partner Image']);?>
-      </li>
-      <li class="item">
-        <?= $this->Html->image('partner/partner2.png', ['alt' => 'partner Image']);?>
-      </li>
-      <li class="item">
-        <?= $this->Html->image('partner/partner3.png', ['alt' => 'partner Image']);?>
-      </li>
-      <li class="item">
-        <?= $this->Html->image('partner/partner4.png', ['alt' => 'partner Image']);?>
-      </li>
-    </ul>
-  </div>
+  <!-- Mitra kami -->
+  <?= $this->element('mitra_kami'); ?>
 
+  <!-- Cara Pembayaran -->
+  <?= $this->element('cara_pembayaran'); ?>
 </body>
 </html>

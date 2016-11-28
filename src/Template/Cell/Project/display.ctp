@@ -4,8 +4,8 @@
 <?php foreach ($projects as $project): ?>
     <li>
         <a href="projects/view/<?php echo $project->id?>" class="wrapper-image">
-            <img src="img/house-1.jpg" alt="" class="layout-1"/>
-            <img src="img/house-9.jpg" alt="" class="layout-2"/>
+            <?= $this->Html->image('house-1.jpg', ['alt' => 'layout-1', 'class' => 'layout-1']);?>
+            <?= $this->Html->image('house-9.jpg', ['alt' => 'layout-2', 'class' => 'layout-2']);?>
         </a>
         <div class="wrapper-content">
             <div class="about-house"><?= $this->Html->link(h($project->name),array('controller'=>'projects','action'=>'view',$project->id),array('class'=>'title'))?>
