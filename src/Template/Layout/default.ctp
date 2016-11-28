@@ -42,6 +42,8 @@ $cakeDescription = 'Buyhome';
     <?= $this->Html->script('bootstrap.min');?>
     <?= $this->Html->script('bootstrap-select.min');?>
     <?= $this->Html->script('jquery-ui.min');?>
+    <?= $this->Html->script('jquery.matchHeight');?>
+    
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>

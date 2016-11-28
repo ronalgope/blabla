@@ -33,9 +33,7 @@ $cakeDescription = 'Buyhome';
     <ul class="slider-list owl-carousel">
         <li class="item"><?= $this->Html->image('home-slider/slider1.jpg', ['alt' => 'Slider Image']);?></li> 
         <li class="item"><?= $this->Html->image('home-slider/slider2.jpg', ['alt' => 'Slider Image']);?></li> 
-        <li class="item"><?= $this->Html->image('home-slider/slider3.jpg', ['alt' => 'Slider Image']);?></li> 
-        <li class="item"><?= $this->Html->image('home-slider/slider4.jpg', ['alt' => 'Slider Image']);?></li> 
-        <li class="item"><?= $this->Html->image('home-slider/slider5.jpg', ['alt' => 'Slider Image']);?></li> 
+        <li class="item"><?= $this->Html->image('home-slider/slider3.jpg', ['alt' => 'Slider Image']);?></li>
     </ul>
   </div>
 
@@ -73,15 +71,18 @@ $cakeDescription = 'Buyhome';
   
   <div class="partner-section">
     <h1>Mitra kami</h1>
-    <ul class="partner-list">
+    <ul class="partner-list owl-carousel">
       <li class="item">
-        <?= $this->Html->image('home-slider/slider1.jpg', ['alt' => 'Slider Image']);?>
+        <?= $this->Html->image('partner/partner1.png', ['alt' => 'partner Image']);?>
       </li>
       <li class="item">
-        <?= $this->Html->image('home-slider/slider1.jpg', ['alt' => 'Slider Image']);?>
+        <?= $this->Html->image('partner/partner2.png', ['alt' => 'partner Image']);?>
       </li>
       <li class="item">
-        <?= $this->Html->image('home-slider/slider1.jpg', ['alt' => 'Slider Image']);?>
+        <?= $this->Html->image('partner/partner3.png', ['alt' => 'partner Image']);?>
+      </li>
+      <li class="item">
+        <?= $this->Html->image('partner/partner4.png', ['alt' => 'partner Image']);?>
       </li>
     </ul>
   </div>
