@@ -83,6 +83,15 @@
 	display: inline-block;
 }
 
+.new-project a.see-more {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	font-size: 17px;
+	color: #9e9e9e;
+	margin-top: 30px;
+}
+
 /*service*/
 .our-service {
 	display: inline-block;
@@ -120,47 +129,5 @@
 
 .our-service li .fa:hover {
 	background: #5bc0de;
-}
-
-/*partner section*/
-.partner-section {
-	padding-top: 30px;
-}
-
-.partner-list {
-	margin-top: 30px;
-}
-
-.partner-list .item {
-	padding: 0px 20px;
-}
-
-.partner-list, .partner-list.owl-carousel.owl-loaded {
-	position: relative;
-	display: inline-block;
-}
-
-.partner-list .owl-custom-next,  .partner-list .owl-custom-prev {
-    font-size: 35px;
-    cursor: pointer;
-    color: #cfced3;
-}
-
-.partner-list .owl-custom-next:hover,  .partner-list .owl-custom-prev:hover {
-	opacity: 0.5;
-}
-
-.partner-list .owl-custom-next {
-	position: absolute;
-    top: 0px;
-	right: -1px;
-    padding: 5px 14px;
-}
-
-.partner-list .owl-custom-prev {
-	position: absolute;
-    top: 0px;
-	left: -1px;
-	padding: 5px 10px;
 }
 
