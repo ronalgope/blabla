@@ -43,6 +43,7 @@ $cakeDescription = 'Buyhome';
     <?= $this->Html->script('bootstrap-select.min');?>
     <?= $this->Html->script('jquery-ui.min');?>
     <?= $this->Html->script('jquery.matchHeight');?>
+    <?= $this->Html->script('owl.carousel2.thumbs');?>
     
 
     <?= $this->fetch('meta') ?>
