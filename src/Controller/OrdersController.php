@@ -37,7 +37,7 @@ class OrdersController extends AppController
     }
 
     public function successorder(){
-      
+
     }
 
     public function createorder(){
@@ -50,7 +50,7 @@ class OrdersController extends AppController
           //$order = $this->Orders->patchEntity($order, $this->request->data);
           $order->users_id = $user['id'];
           $order->units_id = $this->request->data['units_id'];
-          $order->price = 123;
+          $order->price = 1235;
           $order->status = "PENDING";
           $order->isbuyforself = 1;
           $order->billing_method = "HARD CASH";
