@@ -27,7 +27,7 @@ $cakeDescription = 'Buyhome';
 ?>
 <!DOCTYPE HTML>
 <html>
-<body>
+<body class="home">
 
   <div class="home-slider">
     <ul class="slider-list owl-carousel">
@@ -39,233 +39,52 @@ $cakeDescription = 'Buyhome';
     </ul>
   </div>
 
-<!-- Slider Start -->
-<section id="main-slider" class="carousel">
-  <div class="carousel slide">
-    <div class="carousel-inner">
-      <div class="item active" style="background-image: url(img/depan.jpg)">
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-sm-12 padding-bottom-74">
-              <div class="home_1">
-				<div class="header_title animation animated-item-4">
-					<h1>Cara mudah mencari properti</h1>
-					<h4>Lorem ipsum dolor sit amet <br>consectetur adipisicing elit</h4>
-				</div>
-					<form id="form-submit" class="form-submit padding-bottom-74 animation animated-item-1" action="property-details.html">
-						<div class="search">
-							<div class="selector col-md-3  col-sm-3">
-								<select class="selection" id="rent-sale">
-									<option>Kategori</option>
-									<option>For sale</option>
-								</select>
-							</div>
-							<div id="email-label" class="col-md-7 col-sm-7">
-								<i class="fa fa-location-arrow"></i>
-								<input type="text" id="search_field" class="form-control" placeholder="Cari rumah....">
-							</div>
-							<span class="ffs-bs col-md-2 col-sm-2"><button type="submit" class="btn btn-small btn-primary">Cari</button></span>
-						</div>
-					</form>
-			</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--/.item-->
-
-      <div class="item" style="background-image:url(img/depan.jpg)">
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-sm-12 padding-bottom-74">
-              <div class="home_1">
-				<div class="header_title animation animated-item-4">
-          <h1>Cara mudah mencari properti</h1>
-					<h4>Lorem ipsum dolor sit amet <br>consectetur adipisicing elit</h4>
-				</div>
-					<form id="form-submit" class="form-submit padding-bottom-74 animation animated-item-1" action="property-details.html">
-						<div class="search">
-							<div class="selector col-md-3  col-sm-3">
-								<select class="selection" id="rent-sale">
-									<option>Kategori</option>
-									<option>For sale</option>
-								</select>
-							</div>
-							<div id="email-label" class="col-md-7 col-sm-7">
-								<i class="fa fa-location-arrow"></i>
-                <input type="text" id="search_field" class="form-control" placeholder="Cari rumah....">
-							</div>
-							<span class="ffs-bs col-md-2 col-sm-2"><button type="submit" class="btn btn-small btn-primary">Cari</button></span>
-						</div>
-					</form>
-			</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--/.item-->
-
-      <div class="item" style="background-image:url(img/depan.jpg)">
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-sm-12 padding-bottom-74">
-              <div class="home_1">
-				<div class="header_title animation animated-item-4">
-          <h1>Cara mudah mencari properti</h1>
-					<h4>Lorem ipsum dolor sit amet <br>consectetur adipisicing elit</h4>
-				</div>
-					<form id="form-submit" class="form-submit padding-bottom-74 animation animated-item-1" action="property-details.html">
-						<div class="search">
-							<div class="selector col-md-3  col-sm-3">
-								<select class="selection" id="rent-sale">
-									<option>Kategori</option>
-									<option>For sale</option>
-								</select>
-							</div>
-							<div id="email-label" class="col-md-7 col-sm-7">
-								<i class="fa fa-location-arrow"></i>
-                <input type="text" id="search_field" class="form-control" placeholder="Cari rumah....">
-							</div>
-							<span class="ffs-bs col-md-2 col-sm-2"><button type="submit" class="btn btn-small btn-primary">Cari</button></span>
-						</div>
-					</form>
-			</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--/.item-->
-    </div>
+  <div class="new-project">
+    <?php $cell = $this->cell('Project');
+      echo $cell;
+    ?>
   </div>
-</section>
-<!--/.carousel-->
-
-<?php $cell = $this->cell('Project');
-echo $cell;
-?>
+    
 
 <!-- our-services -->
-    <section id="our-services" class="paddin-2">
-        <div class="container">
-        	<header class="section-title">
-              <h2>Layanan Kami</h2>
-            </header>
-            <div class="row">
-                <div class="col-sm-3 service_block">
-                    <div class="row m0 inner">
-                        <div class="row m0 block_title">Mudah digunakan dan transparan</div>
-                        <div class="row m0 block_icon"><i class="fa fa-shopping-bag"></i></div>
-                    </div>
-                </div>
-                <div class="col-sm-3 service_block">
-                    <div class="row m0 inner">
-                        <div class="row m0 block_title">Harga jujur <br/>dan lebih murah</div>
-                        <div class="row m0 block_icon"><i class="fa fa-money"></i></div>
-                    </div>
-                </div>
-                <div class="col-sm-3 service_block">
-                    <div class="row m0 inner">
-                        <div class="row m0 block_title">Jaminan pembelian online yang aman</div>
-                        <div class="row m0 block_icon"><i class="fa fa-lock"></i></div>
-                    </div>
-                </div>
-                <div class="col-sm-3 service_block">
-                    <div class="row m0 inner">
-                        <div class="row m0 block_title">Dapat dijual kembali melalui forum kami</div>
-                        <div class="row m0 block_icon"><i class="fa fa-users"></i></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-<!-- /#our-services -->
-
-<?php echo $this->fetch('dashboard'); ?>
-
-<section>
-  <div class="container">
-    <header class="section-title">
-      <h2>Mitra kami</h2>
-    </header>
-    <div class="recommended_items"><!--recommended_items-->
-      <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="item active">
-            <div class="col-sm-4">
-              <div class="product-image-wrapper">
-                <div class="single-products">
-                  <div class="productinfo text-center">
-                    <img src="img/recommend1.jpg" alt="" style="height:60px"/>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="product-image-wrapper">
-                <div class="single-products">
-                  <div class="productinfo text-center">
-                    <img src="img/recommend2.jpg" alt="" style="height:60px"/>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="product-image-wrapper">
-                <div class="single-products">
-                  <div class="productinfo text-center">
-                    <img src="img/recommend3.jpg" alt="" style="height:60px"/>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="col-sm-4">
-              <div class="product-image-wrapper">
-                <div class="single-products">
-                  <div class="productinfo text-center">
-                    <img src="img/recommend1.jpg" alt="" style="height:60px"/>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="product-image-wrapper">
-                <div class="single-products">
-                  <div class="productinfo text-center">
-                    <img src="img/recommend2.jpg" alt="" style="height:60px"/>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="product-image-wrapper">
-                <div class="single-products">
-                  <div class="productinfo text-center">
-                    <img src="img/recommend3.jpg" alt="" style="height:60px"/>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-         <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-          <i class="fa fa-angle-left"></i>
-          </a>
-          <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-          <i class="fa fa-angle-right"></i>
-          </a>
-      </div>
-    </div><!--/recommended_items-->
+  <div class="our-service">
+    <h1>Layanan Kami</h1>
+    <ul>
+      <li>
+        <span>Mudah digunakan dan transparan</span>
+        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+      </li>
+      <li>
+        <span>Harga jujur <br/>dan lebih murah</span>
+        <i class="fa fa-money" aria-hidden="true"></i>
+      </li>
+      <li>
+        <span>Jaminan pembelian online yang aman</span>
+        <i class="fa fa-lock" aria-hidden="true"></i>
+      </li>
+      <li>
+        <span>Dapat dijual kembali melalui forum kami</span>
+        <i class="fa fa-users" aria-hidden="true"></i>
+      </li>
+    </ul>
   </div>
 
-</section>
+  <?php echo $this->fetch('dashboard'); ?>
+  
+  <div class="partner-section">
+    <h1>Mitra kami</h1>
+    <ul class="partner-list">
+      <li class="item">
+        <?= $this->Html->image('home-slider/slider1.jpg', ['alt' => 'Slider Image']);?>
+      </li>
+      <li class="item">
+        <?= $this->Html->image('home-slider/slider1.jpg', ['alt' => 'Slider Image']);?>
+      </li>
+      <li class="item">
+        <?= $this->Html->image('home-slider/slider1.jpg', ['alt' => 'Slider Image']);?>
+      </li>
+    </ul>
+  </div>
 
 </body>
 </html>
