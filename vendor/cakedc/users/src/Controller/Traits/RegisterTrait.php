@@ -161,9 +161,7 @@ trait RegisterTrait
       $number = $userSaved->handphone;
       $message = "KODE AKTIVASI ".$userSaved->vercode;
       $curlHandle = curl_init();
-      $url="http://162.211.84.203/sms/smsprivate.php?username=".urlencode($username)."&key=".urlencode($apikey)."&number=". urlencode($number)."&message=".urlencode($message)."&modem=3218";
-  		//$url="http://162.211.84.203/sms/smsprivate.php?username=".urlencode($this->username)."&password=".urlencode($this->password)."&key=".$this->apikey."&number=".$this->to."&message=".urlencode($this->text);
-  		curl_setopt($curlHandle, CURLOPT_URL,$url);
+        		curl_setopt($curlHandle, CURLOPT_URL,$url);
   		curl_setopt($curlHandle, CURLOPT_HEADER, 0);
   		curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, true);
   		curl_setopt($curlHandle, CURLOPT_TIMEOUT,120);
