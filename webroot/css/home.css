@@ -28,6 +28,12 @@
 	text-align: center;
 	color: #fff;
 }
+
+.home-slider .item-img {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
 .home-search .selector {
 	padding: 0px;
 }
@@ -111,8 +117,6 @@
 }
 
 .new-project .newest-list li {
-	width: 33.33%;
-	float: left;
 	padding: 0px 20px 20px;
 }
 
@@ -181,8 +185,43 @@
     height: 120px;
     cursor: pointer;
 }
+.our-service .row {
+	margin-top: 30px;
+}
 
 .our-service li .fa:hover {
 	background: #5bc0de;
+}
+
+.our-service .feature-box .description h4 {
+	border-bottom: 0px;
+    font-size: 20px;
+    line-height: normal;
+    margin-bottom: 0px;
+}
+
+.our-service .feature-box {
+	cursor: pointer;
+}
+
+.our-service .feature-box:hover .icon {
+	background: #31a2e1;
+}
+
+.our-service .feature-box .icon {
+	padding: 18px 0px 0px;
+	text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+	.home-search {
+		width: 85%;
+	}
+	.home-search .search-input, .home-search .selector, .home-search .go-search {
+		padding: 0px 0px 10px;
+	}
+	.home-search .search .fa-location-arrow {
+	    margin: 16px 0px 0px 12px;
+	}
 }
 
