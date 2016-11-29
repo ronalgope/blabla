@@ -37,7 +37,7 @@ $(document).ready(function(){
 	/*end Home Slider*/
 
   /*same height*/
-  $(".newest-list .about-house").matchHeight();
+  $(".newest-list .about-house, .our-service .feature-box").matchHeight();
 
   /*partner slider*/
   var partnerSlider = $(".partner-section .partner-list");
@@ -48,7 +48,21 @@ $(document).ready(function(){
     nav:false,
     dots:false,
     autoplay:true,
-    autoplayTimeout:4000
+    autoplayTimeout:4000,
+    responsive : {
+      0: {
+        items: 1
+      },
+      480: {
+        items: 2
+      },
+      768: {
+        items: 2
+      },
+      800: {
+        items: 3
+      }
+    }
   });
 
   partnerSlider.append("<div class='owl-custom-nav'><div class='owl-custom-next'><i class='fa fa-arrow-circle-right' aria-hidden='true'></i></div><div class='owl-custom-prev'><i class='fa fa-arrow-circle-left' aria-hidden='true'></i></div></div>");

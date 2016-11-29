@@ -256,7 +256,6 @@ input {
 
 .footer-list li {
 	display: inline-block;
-	width: 25%;
 	float: left;
 }
 
@@ -283,7 +282,7 @@ input {
 }
 
 .newsletter-footer input {
-	width: 80%;
+	width: 75%;
 	height: 35px;
 }
 
@@ -341,6 +340,13 @@ input {
     font-size: 35px;
     cursor: pointer;
     color: #cfced3;
+    height: 0px;
+    top: 50%;
+}
+
+.partner-list .owl-custom-next .fa,  .partner-list .owl-custom-prev .fa {
+    position: relative;
+    top: -25px;
 }
 
 .partner-list .owl-custom-next:hover,  .partner-list .owl-custom-prev:hover {
@@ -349,16 +355,16 @@ input {
 
 .partner-list .owl-custom-next {
 	position: absolute;
-    top: 0px;
-	right: -1px;
-    padding: 5px 14px;
+	right: 0px;
+	height: 0px;
+    top: 50%;
 }
 
 .partner-list .owl-custom-prev {
 	position: absolute;
-    top: 0px;
-	left: -1px;
-	padding: 5px 10px;
+	left: 0px;
+	height: 0px;
+    top: 50%;
 }
 
 /*Cara Pembayaran*/
@@ -371,13 +377,13 @@ input {
 .cara_pembayaran ul {
 	width: 100%;
 	display: inline-block;
-	margin-top: 20px;
+	margin: 20px 0px 10px; 
 }
 
 .cara_pembayaran li {
-	width: 8.33%;
 	display: inline-block;
 	float: left;
+	padding: 0px 0px 10px;
 }
 
 /*PDP*/
@@ -541,4 +547,18 @@ input {
 	border-bottom: 0px;
 	padding-bottom: 0px;
 }
+
+@media only screen and (max-width: 992px) {
+	.footer-list > li {
+		margin-bottom: 20px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.footer-list, .footer-list .title, .footer-list .medsos-footer {
+		text-align: center;
+	}
+}
+
+
 
