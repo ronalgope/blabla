@@ -9,7 +9,7 @@
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 ?>
-<div class="users">
+<div class="users col-md-3">
     <h3><?= $this->Html->image(empty($user->avatar) ? $avatarPlaceholder : $user->avatar, ['width' => '180', 'height' => '180']); ?></h3>
     <h3>
         <?=
@@ -69,6 +69,15 @@
             <?php
             endif;
             ?>
+        </div>
+        <div>
+          MY ORDER
+          <?php $cell = $this->cell('Order');
+            echo $cell;
+          ?>
+        </div>
+        <div>
+          MY ACCOUNT
         </div>
     </div>
 </div>
