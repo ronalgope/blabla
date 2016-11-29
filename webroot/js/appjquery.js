@@ -1,4 +1,9 @@
 $(document).ready(function(){
+  /*mobile menu*/
+  $("#mobile-menu-button").click(function(){
+    $("#menu-nav").addClass("mobile-active");
+    $("#menu-nav.mobile-active #navigation").slideToggle();
+  });
 
 	/*Home Slider */
 	var count = false;
@@ -14,8 +19,8 @@ $(document).ready(function(){
 		loop: count,
 		nav:false,
 		dots:false,
-		autoplay:false,
-		autoplayTimeout:4000
+		autoplay: false,
+		autoplayTimeout:5000
 	});
 
   if ($(".slider-list .item").length > 1){
