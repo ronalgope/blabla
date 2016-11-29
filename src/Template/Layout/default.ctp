@@ -27,6 +27,7 @@ $cakeDescription = 'Buyhome';
 
     <?= $this->Html->css('bootstrap.min.css') ?>
     <?= $this->Html->css('bootstrap-select.min.css') ?>
+    <?= $this->Html->css('master.css') ?>
     <?= $this->Html->css('global.css') ?>
     <?= $this->Html->css('home.css') ?>
     <?= $this->Html->css('font-awesome.min.css') ?>
@@ -35,15 +36,18 @@ $cakeDescription = 'Buyhome';
     <?= $this->Html->css('jquery-ui.min.css') ?>
     
 
-    <?= $this->Html->script('jquery-1.11.3');?>
     <?= $this->Html->script('jquery-3.1.1.min');?>
-    <?= $this->Html->script('owl.carousel');?>
-    <?= $this->Html->script('appjquery');?>
     <?= $this->Html->script('bootstrap.min');?>
+    <?= $this->Html->script('owl.carousel');?>
+    <?= $this->Html->script('mmenu.min.all');?>
+    <?= $this->Html->script('appjquery');?>
+    
     <?= $this->Html->script('bootstrap-select.min');?>
-    <?= $this->Html->script('jquery-ui.min');?>
+    
+    
     <?= $this->Html->script('jquery.matchHeight');?>
     <?= $this->Html->script('owl.carousel2.thumbs');?>
+
     
 
     <?= $this->fetch('meta') ?>
@@ -51,42 +55,40 @@ $cakeDescription = 'Buyhome';
     <?= $this->fetch('script') ?>
 </head>
 <body>
-  <!-- Header Start -->
-  <div id="header">
-    <div id="header-container">
-      <div class="logo-header"> <a href="/pages/home"><?= $this->Html->image('logo2.png', array('id' => 'logo-header')); ?></a> </div>
 
-      <div class="search-top">
-        <input type="text" id="search_field" class="form-control" placeholder="Cari rumah....">
-        <div class="selector">
-          <select class="selection selectpicker" id="rent-sale"" title="Kategori">
-            <option>Apa aja</option>
-            <option>For sale</option>
-          </select>
+  <!-- Header Start -->
+  <header id="navigation header-container-box" class="navigation affix-top menu-line" data-offset-top="2" data-spy="affix">
+    <div class="container" id="menu-nav">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-xs-6">
+          <div class="logo"><a href="/pages/home"><?= $this->Html->image('logo2.png', array('id' => 'logo-header')); ?></a></div>
         </div>
-        <button type="submit" class="btn btn-search"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;</button>
+        <!-- /.logo -->
+        <div class="col-lg-8 col-md-6 col-xs-6"> <a class="visible-xs" href="#mobile-menu" id="mobile-menu-button"><i class="fa fa-bars"></i></a>
+          <nav id="navigation" class="pull-right">
+            <ul>
+              <li> 
+                <a class="hvr-overline-from-center" href="/users/users/register"><i class="fa fa-sign-in" aria-hidden="true"></i>Daftar</a>
+              </li>
+              <li class="contact-us-top">
+                  <a class="hvr-overline-from-center" href="/login"><i class="fa fa-lock" aria-hidden="true"></i>Masuk</a>
+              </li>
+              <li class="login-menu">
+                  <a class="hvr-overline-from-center" href="#"><i class="fa fa-users" aria-hidden="true"></i>Forum</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
-      <ul class="menu-list">
-          <li class="check-ticket">
-              <a href="/users/users/register"><i class="fa fa-sign-in" aria-hidden="true"></i>Daftar</a>
-          </li>
-          <li class="contact-us">
-              <a href="/login"><i class="fa fa-lock" aria-hidden="true"></i>Masuk</a>
-          </li>
-          <li class="login-menu">
-              <a href="#"><i class="fa fa-users" aria-hidden="true"></i>Forum</a>
-          </li>
-      </ul>
     </div>
-  </div>
-  <!-- Header Ends -->
+  </header>
 
   <!-- Main content-->
   <div id="main-container">
       <?= $this->fetch('content') ?>
   </div>
   <!-- Main contentend-->
-  
+
   <!-- Footer -->
   <div id="footer">
     <div id="footer-container">

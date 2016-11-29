@@ -235,7 +235,7 @@ input {
 /* Main */
 #main-container {
     max-width: 1500px;
-    padding: 80px 25px 0px;
+    padding: 10px 25px 0px;
     margin: 0 auto;
 }
 
@@ -288,8 +288,8 @@ input {
 }
 
 .newsletter-footer .btn {
-    height: 36px;
-    vertical-align: top;
+    height: 35px;
+    vertical-align: bottom;
 }
 
 .newsletter-footer p {

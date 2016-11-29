@@ -31,9 +31,27 @@ $cakeDescription = 'Buyhome';
 
   <div class="home-slider">
     <ul class="slider-list owl-carousel">
-        <li class="item"><?= $this->Html->image('home-slider/slider1.jpg', ['alt' => 'Slider Image']);?></li> 
-        <li class="item"><?= $this->Html->image('home-slider/slider2.jpg', ['alt' => 'Slider Image']);?></li> 
-        <li class="item"><?= $this->Html->image('home-slider/slider3.jpg', ['alt' => 'Slider Image']);?></li>
+        <li class="item">
+          <?= $this->Html->image('home-slider/slider1.jpg', ['alt' => 'Slider Image']);?>  
+          <div class="slider-content">
+            <div class="header_title">
+              <h1>The simplest way to find Property</h1>
+              <h4>Lorem Ipsum is simply dummy text of the printing <br>and typesetting industry.</h4>
+            </div>
+            <?= $this->element('search_home');?>
+          </div> 
+          
+        </li> 
+        <li class="item">
+          <?= $this->Html->image('home-slider/slider4.jpg', ['alt' => 'Slider Image']);?>
+          <div class="slider-content">
+            <div class="header_title">
+              <h1>The simplest way to find Property</h1>
+              <h4>Lorem Ipsum is simply dummy text of the printing <br>and typesetting industry.</h4>
+            </div>
+            <?= $this->element('search_home');?>
+          </div> 
+        </li>
     </ul>
   </div>
 
