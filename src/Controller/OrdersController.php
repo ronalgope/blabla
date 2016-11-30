@@ -46,21 +46,54 @@ class OrdersController extends AppController
       if ($this->request->is('post')) {
 
         $user = $this->Auth->identify();
-        //!die(print_r('2132'.$user['id']));
+        //!die(print_r($this->request->data));
           //$order = $this->Orders->patchEntity($order, $this->request->data);
           $order->users_id = $user['id'];
           $order->units_id = $this->request->data['units_id'];
+          switch($this->request->data['optradio']){
+            case 0:
+            $billing_method = "KPR";
+            $order->bf = $this->request->data['0bf'];
+            $order->dp = $this->request->data['0dp'];
+            $order->lamaangsuran = $this->request->data['0lamaangsur'];
+            $order->totalangsuran = $this->request->data['0totalangsur'];
+            break;
+            case 1:
+            $billing_method = "HARD CASH";
+            $order->bf = $this->request->data['1bf'];
+            $order->lamaangsuran = $this->request->data['1lamaangsur'];
+            $order->totalangsuran = $this->request->data['1totalangsur'];
+            break;
+            case 2:
+            $billing_method = "CASH BERTAHAP";
+            $order->bf = $this->request->data['2bf'];
+            $order->lamaangsuran = $this->request->data['2lamaangsur'];
+            $order->totalangsuran = $this->request->data['2totalangsur'];
+            break;
+            case 3:
+            $billing_method = "CASH DP";
+            $order->bf = $this->request->data['3bf'];
+            $order->dp = $this->request->data['3dp'];
+            $order->lamaangsuran = $this->request->data['3lamaangsur'];
+            $order->totalangsuran = $this->request->data['3totalangsur'];
+            break;
+          }
+          if($this->request->data['optradio2']==0){
+            $isbuyforself = 1;
+          }elseif($this->request->data['optradio2']==1){
+            $isbuyforself = 0;
+          }
           $order->price = 1235;
-          $order->status = "PENDING";
-          $order->isbuyforself = 1;
-          $order->billing_method = "HARD CASH";
+          $order->status = "NEW";
+          $order->isbuyforself = $isbuyforself;
+          $order->billing_method = $billing_method;
           if ($this->Orders->save($order)) {
               $this->Flash->success(__('The order has been saved.'));
 
-              return $this->redirect(['action' => 'index']);
+              return $this->redirect(['controller' => 'profile']);
           } else {
               $this->Flash->error(__('The order could not be saved. Please, try again.'));
-              return $this->redirect(['action' => 'index']);
+              return $this->redirect(['action' => 'cart'],$this->request->data['units_id']);
           }
       }
       $users = $this->Orders->Users->find('list', ['limit' => 200]);

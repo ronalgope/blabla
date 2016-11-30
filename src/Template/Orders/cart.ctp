@@ -112,7 +112,7 @@
                   <tr>
                     <td style="width:200px">Booking Fee</td>
                     <td style="width:90px"></td>
-                    <td style="width:160px;text-align:right;padding-right:10px"><?= $unit->bookingfee ?></td>
+                    <td style="width:160px;text-align:right;padding-right:10px"><input type="hidden" name="0bf" value="<?= $unit->bookingfee ?>"/><?= $unit->bookingfee ?></td>
                     <td  style="width:200px"></td>
                     <td></td>
                   </tr>
@@ -123,17 +123,19 @@
                       <?php
                       $total = ($unit->price - ($unit->price*(1/2))-$unit->bookingfee)*(1/5);
                       ?>
+                      <input type="hidden" name="0dp" value="<?= $total ?>"/>
                       <?= $total ?></td>
                       <td  style="width:200px">Discount</td>
                       <td>50%</td>
                   </tr>
                   <tr>
                     <td style="width:200px" >Lama angsuran</td>
-                    <td style="width:90px">12</td>
+                    <td style="width:90px">12<input type="hidden" name="0lamaangsur" value="12"/></td>
                     <td class="success" style="width:160px;text-align:right;padding-right:10px">
                       <?php
                       $totalangsur = $total / 12;
                       ?>
+                      <input type="hidden" name="0totalangsur" value="<?= round($totalangsur) ?>"/>
                       <?= round($totalangsur) ?></td>
                     <td  style="width:200px"></td>
                     <td></td>
@@ -148,7 +150,7 @@
                   <tr>
                     <td style="width:200px">Booking Fee</td>
                     <td style="width:90px"></td>
-                    <td style="width:160px;text-align:right;padding-right:10px"><?= $unit->bookingfee ?></td>
+                    <td style="width:160px;text-align:right;padding-right:10px"><input type="hidden" name="1bf" value="<?= $unit->bookingfee ?>"/><?= $unit->bookingfee ?></td>
                     <td  style="width:200px"></td>
                     <td></td>
                   </tr>
@@ -165,11 +167,12 @@
                   </tr>
                   <tr>
                     <td style="width:200px" >Lama angsuran</td>
-                    <td style="width:90px">3</td>
+                    <td style="width:90px">3<input type="hidden" name="1lamaangsur" value="3"/></td>
                     <td class="success" style="width:160px;text-align:right;padding-right:10px">
                       <?php
                       $totalangsur = $total / 3;
                       ?>
+                      <input type="hidden" name="1totalangsur" value="<?= round($totalangsur) ?>"/>
                       <?= round($totalangsur) ?></td>
                     <td  style="width:200px"></td>
                     <td></td>
@@ -183,7 +186,7 @@
               <tr>
                 <td style="width:200px">Booking Fee</td>
                 <td style="width:90px"></td>
-                <td style="width:160px;text-align:right;padding-right:10px"><?= $unit->bookingfee ?></td>
+                <td style="width:160px;text-align:right;padding-right:10px"><input type="hidden" name="2bf" value="<?= $unit->bookingfee ?>"/><?= $unit->bookingfee ?></td>
                 <td  style="width:200px"></td>
                 <td></td>
               </tr>
@@ -200,11 +203,12 @@
               </tr>
               <tr>
                 <td style="width:200px" >Lama angsuran</td>
-                <td style="width:90px">12</td>
+                <td style="width:90px">12<input type="hidden" name="2lamaangsur" value="12"/></td>
                 <td class="success" style="width:160px;text-align:right;padding-right:10px">
                   <?php
                   $totalangsur = $total / 12;
                   ?>
+                  <input type="hidden" name="2totalangsur" value="<?= round($totalangsur) ?>"/>
                   <?= round($totalangsur) ?></td>
                 <td  style="width:200px"></td>
                 <td></td>
@@ -217,7 +221,7 @@
               <tr>
                 <td style="width:200px">Booking Fee</td>
                 <td style="width:90px"></td>
-                <td style="width:160px;text-align:right;padding-right:10px"><?= $unit->bookingfee ?></td>
+                <td style="width:160px;text-align:right;padding-right:10px"><input type="hidden" name="3bf" value="<?= $unit->bookingfee ?>"/><?= $unit->bookingfee ?></td>
                 <td  style="width:200px"></td>
                 <td></td>
               </tr>
@@ -228,17 +232,19 @@
                   <?php
                   $total = ($unit->price - ($unit->price*(1/2))-$unit->bookingfee)*(1/5);
                   ?>
+                  <input type="hidden" name="3dp" value="<?= $total ?>"/>
                   <?= $total ?></td>
                   <td  style="width:200px">Discount</td>
                   <td>50%</td>
               </tr>
               <tr>
                 <td style="width:200px">Lama angsuran</td>
-                <td style="width:90px">2</td>
+                <td style="width:90px">2<input type="hidden" name="3lamaangsur" value="2"/></td>
                 <td class="success" style="width:160px;text-align:right;padding-right:10px">
                   <?php
                   $totalangsur = $total / 2;
                   ?>
+                  <input type="hidden" name="3totalangsur" value="<?= round($totalangsur) ?>"/>
                   <?= round($totalangsur) ?></td>
                 <td  style="width:200px"></td>
                 <td></td>
