@@ -30,6 +30,7 @@ trait ProfileTrait
      */
     public function profile($id = null)
     {
+        $this->viewBuilder()->layout('dashboard');
         $loggedUserId = $this->Auth->user('id');
         $isCurrentUser = false;
         if (!Configure::read('Users.Profile.viewOthers') || empty($id)) {

@@ -27,7 +27,7 @@ class ProjectCell extends Cell
       $this->loadModel('Projects');
       $projects = $this->Projects->find('all',[
         'limit' => 6,
-        'order' => 'created_date DESC'
+        'order' => 'id ASC'
         ]);
         $this->set('projects',$projects);
     }
