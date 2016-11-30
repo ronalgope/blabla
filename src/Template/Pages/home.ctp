@@ -32,7 +32,7 @@ $cakeDescription = 'Buyhome';
   <div class="home-slider">
     <ul class="slider-list owl-carousel">
         <li class="item">
-          <div class="item-img" style="width:100%;height:500px;background-image:url(img/home-slider/slider1.jpg)">
+          <div class="item-img" style="width:100%;height:500px;background-image:url(<?php echo $this->request->webroot . 'img/home-slider/slider1.jpg'; ?>)">
           <div class="slider-content">
             <div class="header_title">
               <h1>The simplest way to find Property</h1>
@@ -43,7 +43,7 @@ $cakeDescription = 'Buyhome';
           
         </li> 
         <li class="item">
-          <div class="item-img" style="width:100%;height:500px;background-image:url(img/home-slider/slider4.jpg)">
+          <div class="item-img" style="width:100%;height:500px;background-image:url(<?php echo $this->request->webroot . 'img/home-slider/slider4.jpg'; ?>)">
           <div class="slider-content">
             <div class="header_title">
               <h1>The simplest way to find Property</h1>

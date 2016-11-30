@@ -37,7 +37,7 @@ $(document).ready(function(){
 	/*end Home Slider*/
 
   /*same height*/
-  $(".newest-list .about-house, .our-service .feature-box").matchHeight();
+  $(".newest-list .about-house, .our-service .feature-box, .dena-map>div").matchHeight();
 
   /*partner slider*/
   var partnerSlider = $(".partner-section .partner-list");

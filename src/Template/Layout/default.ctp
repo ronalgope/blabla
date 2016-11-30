@@ -30,6 +30,7 @@ $cakeDescription = 'Buyhome';
     <?= $this->Html->css('master.css') ?>
     <?= $this->Html->css('global.css') ?>
     <?= $this->Html->css('home.css') ?>
+    <?= $this->Html->css('view.css') ?>
     <?= $this->Html->css('font-awesome.min.css') ?>
     <?= $this->Html->css('owl.carousel.css') ?>
     <?= $this->Html->css('owl.theme.default.css') ?>
