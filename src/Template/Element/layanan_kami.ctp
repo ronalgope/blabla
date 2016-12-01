@@ -1,5 +1,5 @@
 <div class="our-service">
-  <div class="block-header"><hr><h1>Layanan Kami</h1></div>
+  <h1>Layanan Kami</h1>
     <div class="row">
       <div class="col-md-3 col-sm-6">
         <div class="feature-box equal-height">

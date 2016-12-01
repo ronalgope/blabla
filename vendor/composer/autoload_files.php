@@ -15,4 +15,5 @@ return array(
     'a16312f9300fed4a097923eacb0ba814' => $vendorDir . '/igorw/get-in/src/get_in.php',
     '667aeda72477189d0494fecd327c3641' => $vendorDir . '/symfony/var-dumper/Resources/functions/dump.php',
     'e7223560d890eab89cda23685e711e2c' => $vendorDir . '/psy/psysh/src/Psy/functions.php',
+    '8ce50fd457945bba337f8403f4933506' => $vendorDir . '/veritrans/veritrans-php/Veritrans.php',
 );

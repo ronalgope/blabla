@@ -8,8 +8,7 @@
       <div class="view-logo"> <?= $this->Html->image('projects/images/'.$project->logo,array("style"=>"height:100%"),['fullBase' => true]) ?>
       </div>
       <h2><?= h($project->name) ?></h2>
-      <div class="view-desc"><i class="fa fa-quote-left" aria-hidden="true"></i><?= h($project->body); ?><i class="fa fa-quote-right" aria-hidden="true"></i></div>
-      
+      <h4><?= '"'.h($project->body).'"' ?></h4> 
     </div>
     <!-- View Slider -->
     <div class="view-slider col-sm-12 ">
@@ -39,7 +38,7 @@
 
     <!--Peta Lokasi-->
     <div class="peta-lokasi col-sm-12">
-      <div class="block-header"><hr><h1>Peta Lokasi</h1></div>
+      <h1>Peta Lokasi</h1>
       <script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
         <?php
           $options = [
@@ -62,10 +61,13 @@
         ?>
     </div>
   </div>
-  
+
   <div class="row row-eq-height dena-map">
     <!--Dena Project-->
     <div class="dena-project col-sm-6">
+      <h1>
+        <?= $this->Text->autoParagraph(h($project->body)); ?>
+      </h1>
       <div class="dena-img">
         <?= $this->Html->image('projects/filename/'.$project->filename,array("class"=>"img-dena")) ?>
       </div>
@@ -73,7 +75,7 @@
 
     <!-- Unit yang tersedia -->
     <div class="project-unit col-sm-6">
-      <div class="block-header"><hr><h1>Unit Yang Tersedia</h1></div>
+      <h1>Unit Yang Tersedia</h1>
       <div class="all-unit row">
         <ul class="nav nav-tabs col-sm-12" id="lb-tabs">
           <?php
@@ -104,7 +106,7 @@
                   <li>
                       <h4>Spesifikasi</h4>
                       <?= $this->Text->autoParagraph(h($unit2->spec)); ?>
-                    
+
                     </li>
                     <li>
                       <h4>Fasilitas</h4>
@@ -127,10 +129,10 @@
       </div>
     </div>
 
-    
+
   </div>
 
-  
+
 
   </body>
   </html>

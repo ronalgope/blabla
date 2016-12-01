@@ -20,7 +20,7 @@ use Cake\Core\Configure;
 </head>
 <body class="login-page row">
    <div class="row col-sm-6 login-wrapper">
-    <div class="block-header"><hr><h1>LOGIN</h1></div>
+    <h1 class="page-title col-sm-12">LOGIN</h1> 
     <div class="login-detail col-sm-12">
         <?= $this->Flash->render('auth') ?>
         <?= $this->Form->create() ?>

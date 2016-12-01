@@ -14,6 +14,7 @@
  */
 
 $cakeDescription = 'Buyhome';
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,21 +36,21 @@ $cakeDescription = 'Buyhome';
     <?= $this->Html->css('owl.carousel.css') ?>
     <?= $this->Html->css('owl.theme.default.css') ?>
     <?= $this->Html->css('jquery-ui.min.css') ?>
-    
+
 
     <?= $this->Html->script('jquery-3.1.1.min');?>
     <?= $this->Html->script('bootstrap.min');?>
     <?= $this->Html->script('owl.carousel');?>
     <?= $this->Html->script('mmenu.min.all');?>
     <?= $this->Html->script('appjquery');?>
-    
+
     <?= $this->Html->script('bootstrap-select.min');?>
-    
-    
+
+
     <?= $this->Html->script('jquery.matchHeight');?>
     <?= $this->Html->script('owl.carousel2.thumbs');?>
 
-    
+
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
@@ -68,12 +69,23 @@ $cakeDescription = 'Buyhome';
         <div class="col-lg-8 col-md-6 col-xs-6"> <a class="visible-xs" href="#mobile-menu" id="mobile-menu-button"><i class="fa fa-bars"></i></a>
           <nav id="navigation" class="pull-right">
             <ul>
-              <li> 
+              <?php
+                if($user):
+               ?>
+               <li>
+                 <a class="hvr-overline-from-center" href="/profile"><i class="fa fa-sign-in" aria-hidden="true"></i>Profile</a>
+               </li>
+              <li class="contact-us-top">
+                  <a class="hvr-overline-from-center" href="/logout"><i class="fa fa-lock" aria-hidden="true"></i>Logout</a>
+              </li>
+            <?php else : ?>
+              <li>
                 <a class="hvr-overline-from-center" href="/users/users/register"><i class="fa fa-sign-in" aria-hidden="true"></i>Daftar</a>
               </li>
               <li class="contact-us-top">
                   <a class="hvr-overline-from-center" href="/login"><i class="fa fa-lock" aria-hidden="true"></i>Masuk</a>
               </li>
+            <?php endif;?>
               <li class="login-menu">
                   <a class="hvr-overline-from-center" href="#"><i class="fa fa-users" aria-hidden="true"></i>Forum</a>
               </li>

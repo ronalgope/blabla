@@ -29,8 +29,12 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src"
-        }
+            "App\\": "src",
+            "Veritrans\\":"./vendor/veritrans/veritrans-php/"
+        },
+        "files": [
+        "vendor/veritrans/veritrans-php/Veritrans.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

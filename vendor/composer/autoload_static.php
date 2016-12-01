@@ -16,6 +16,7 @@ class ComposerStaticInit3cf07300bb4708feff5cd12835ef3212
         'a16312f9300fed4a097923eacb0ba814' => __DIR__ . '/..' . '/igorw/get-in/src/get_in.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
+        '8ce50fd457945bba337f8403f4933506' => __DIR__ . '/..' . '/veritrans/veritrans-php/Veritrans.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -26,6 +27,10 @@ class ComposerStaticInit3cf07300bb4708feff5cd12835ef3212
         'X' => 
         array (
             'XdgBaseDir\\' => 11,
+        ),
+        'V' => 
+        array (
+            'Veritrans\\' => 10,
         ),
         'S' => 
         array (
@@ -101,6 +106,10 @@ class ComposerStaticInit3cf07300bb4708feff5cd12835ef3212
         'XdgBaseDir\\' => 
         array (
             0 => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src',
+        ),
+        'Veritrans\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/veritrans/veritrans-php',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (

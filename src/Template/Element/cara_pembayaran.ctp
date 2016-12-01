@@ -1,5 +1,5 @@
 <div class="cara_pembayaran">
-	<div class="block-header"><hr><h1>Cara Pembayaran</h1></div>
+	<h1>Cara Pembayaran</h1>
 	<ul class="row">
 		<li class="col-md-1 col-sm-2 col-xs-3"><?= $this->Html->image('payment/bca_klik.png', ['alt' => 'payment Image']);?></li>
 		<li class="col-md-1 col-sm-2 col-xs-3"><?= $this->Html->image('payment/mandiri_clickpay.png', ['alt' => 'payment Image']);?></li>
