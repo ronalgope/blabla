@@ -39,7 +39,7 @@
 
     <!--Peta Lokasi-->
     <div class="peta-lokasi col-sm-12">
-      <h1>Peta Lokasi</h1>
+      <div class="block-header"><hr><h1>Peta Lokasi</h1></div>
       <script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
         <?php
           $options = [
@@ -73,7 +73,7 @@
 
     <!-- Unit yang tersedia -->
     <div class="project-unit col-sm-6">
-      <h1>Unit Yang Tersedia</h1>
+      <div class="block-header"><hr><h1>Unit Yang Tersedia</h1></div>
       <div class="all-unit row">
         <ul class="nav nav-tabs col-sm-12" id="lb-tabs">
           <?php
