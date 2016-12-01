@@ -134,6 +134,7 @@ input {
     height: 21px;
     text-align: center;
     margin-bottom: 20px;
+    padding: 0px 5px;
 }
 
 .block-header hr {
@@ -147,7 +148,7 @@ input {
 
 .block-header h1 {
     font-weight: 400;
-    font-size: 18px;
+    font-size: 23px;
     position: relative;
     background-color: #FFFFFF;
     font-family: Helvetica, "Helvetica-Normal", Verdana, Geneva, Tahoma, sans-serif;
@@ -396,9 +397,13 @@ header .container {
 
 /*partner section*/
 .partner-section {
-	padding-top: 20px;
-	padding-bottom: 20px;
-	border-bottom:0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 0px;
+    max-width: 1024px;
+    margin: 0 auto;
+    clear: both;
+    margin-bottom: 30px;
 }
 
 .partner-list {
@@ -447,15 +452,19 @@ header .container {
 
 /*Cara Pembayaran*/
 .cara_pembayaran {
-	display: inline-block;
-	width: 100%;
-	margin-top: 30px;
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    max-width: 1024px;
+    margin: auto;
+    clear: both;
 }
 
 .cara_pembayaran ul {
 	width: 100%;
 	display: inline-block;
 	margin: 20px 0px 10px; 
+	padding: 0px 15px;
 }
 
 .cara_pembayaran li {
