@@ -123,7 +123,7 @@
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                   </div>
                   <?=
-                  $this->Html->link("Lanjutkan Membeli"." ".$this->Html->tag('span', strtoupper($unit2->name)),'/orders/cart/'.$unit2->id,['class' => 'button', 'target' => '_blank', 'escape'=>false]);
+                  $this->Html->link("Lanjutkan Membeli"." ".$this->Html->tag('span', strtoupper($unit2->name)),'/orders/cart/'.$unit2->id,['class' => 'button', 'escape'=>false]);
                   ?>
                 </button>
                 </div>
