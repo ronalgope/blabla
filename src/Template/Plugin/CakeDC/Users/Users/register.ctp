@@ -10,61 +10,58 @@
  */
 use Cake\Core\Configure;
 ?>
-<section class="property-detail well">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 property-detail-inner">
-          <div class="row">
-            <div class="col-lg-3 col-md-3 text-center">
-            </div>
-            <div class="col-lg-6 col-md-6 text-center">
-              <h4><b>REGISTRASI</b></h4>
-              <div class="registration-detail form-group well">
-              <?= $this->Form->create($user,array('class'=>'form-inline')); ?>
-              <fieldset>
-                  <?php
-                  echo $this->Form->input('username');
-                  echo $this->Form->input('email');
-                  echo $this->Form->input('password');
-                  echo $this->Form->input('password_confirm', ['type' => 'password']);
-                  echo $this->Form->input('first_name');
-                  echo $this->Form->input('last_name');
-                  echo $this->Form->input('handphone');
-                  if (Configure::read('Users.Tos.required')) {
-                      echo $this->Form->input('tos', ['type' => 'checkbox', 'label' => __d('CakeDC/Users', 'Accept TOS conditions?'), 'required' => true]);
-                  }
-                  if (Configure::read('Users.reCaptcha.registration')) {
-                      echo $this->User->addReCaptcha();
-                  }
-                  ?>
-              </fieldset>
-              <?= $this->Form->button(__d('CakeDC/Users', 'DAFTAR')) ?>
-              <?= $this->Form->end() ?>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-3 text-center">
-          </div>
-          </div>
-        </div>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register</title>
+</head>
+<body class="register-page row">
+  <div class="row col-sm-6 register-wrapper">
+    <h1 class="page-title col-sm-12">REGISTRASI</h1> 
+    <div class="registrasi-detail col-sm-12">
+      <?= $this->Form->create($user,array('class'=>'form-inline')); ?>
+
+      <div class="col-sm-12">
+        <?= $this->Form->input('username');?>
       </div>
+
+      <div class="col-sm-12">
+        <?= $this->Form->input('email', ['type' => 'email']);?>
+      </div>
+
+      <div class="col-sm-6">
+        <?= $this->Form->input('password', ['type' => 'password']);?>
+      </div>  
+      <div class="col-sm-6">
+        <?= $this->Form->input('password_confirm', ['type' => 'password']);?>
+      </div>
+
+      <div class="col-sm-6">
+        <?= $this->Form->input('first_name');?>
+      </div>
+      <div class="col-sm-6">
+        <?= $this->Form->input('last_name');?>
+      </div>
+
+      <div class="col-sm-12">
+        <?= $this->Form->input('handphone', ['type' => 'tel']);?>
+      </div>
+
+      <?php 
+        if (Configure::read('Users.Tos.required')) {
+            echo $this->Form->input('tos', ['type' => 'checkbox', 'label' => __d('CakeDC/Users', 'Accept TOS conditions?'), 'required' => true]);
+        }
+        if (Configure::read('Users.reCaptcha.registration')) {
+            echo $this->User->addReCaptcha();
+        }
+      ?>
+      <div class="button col-sm-12">
+        <?= $this->Form->button(__d('CakeDC/Users', 'DAFTAR')) ?>
+      </div>
+      
+      <?= $this->Form->end() ?>
+
+    </div>
   </div>
-</section>
-
-<style>
-.registration-detail{
-  text-align:left;
-}
-.registration-detail input {
-    text-align:left;
-    margin-bottom: 20px;
-    width:100%;
-}
-.registration-detail label {
-    padding-right:90px;
-    width:200px
-}
-.registration-detail button {
-    text-align:center;
-}
-
-</style>
+</body>
+</html>

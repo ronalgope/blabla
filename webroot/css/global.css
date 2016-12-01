@@ -25,6 +25,21 @@ body {
 	font-family: "Roboto", sans-serif;
 	width: 100%;
 	font-size: 15px;
+	color: #000;
+}
+
+button {
+	background: #02b2e1;
+    border: none;
+    padding: 15px;
+    float: right;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 40px;
+    border-radius: 5px;
+    position: relative;
+    text-align: center;
 }
 
 p {
@@ -94,6 +109,7 @@ input {
 	width: 100%;
 	height: 34px;
 	padding: 0px 10px;
+	border: 1px solid #000;
 }
 
 .bootstrap-select .dropdown-toggle:focus, .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
@@ -397,6 +413,40 @@ header .hvr-overline-from-center:before {
 	padding: 0px 0px 10px;
 }
 
+/*** Register and login**/
+.page-title {
+	text-align: center;
+}
+
+.register-page input, .login-page input {
+    border: 1px solid #000;
+}
+
+.register-page .page-title, .login-page .page-title, .reset-pass-wrapper .page-title {
+	margin-top: 20px;
+}
+
+.register-page .register-wrapper, .login-page .login-wrapper, .reset-pass-wrapper {
+	margin: 0 auto;
+	float: none;
+	color: #000;
+}
+
+.registrasi-detail .input, .login-detail .input {
+	margin-bottom: 15px;
+}
+
+.registrasi-detail button, .login-detail button , .reset-pass-wrapper  button {
+	width: 100%;
+}
+
+.login-detail .checkbox label input {
+	margin-top: -7px;
+	width: 14px;
+}
+
+
+/*Responsive */
 
 @media only screen and (max-width: 992px) {
 	.footer-list > li {

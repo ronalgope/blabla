@@ -108,6 +108,7 @@ header.navigation.affix .logo img {
 .visible-xs .fa {
 	border: 1px solid #02b2e1;
 	padding: 5px 10px;
+    color: #02b2e1;
 }
 .contact-us .contact-us-scroll {
 	left: 0;
