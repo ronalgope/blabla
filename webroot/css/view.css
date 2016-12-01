@@ -109,6 +109,14 @@
 	margin-bottom: 30px;
 }
 
+.project-unit {
+    padding: 30px 20px 30px;
+}
+
+.project-unit .all-unit {
+	margin: 0px;
+}
+
 .project-unit h1 {
 	text-align: center;
 }
@@ -131,6 +139,7 @@
     border-radius: 5px;
     position: relative;
     text-align: center;
+    width: 100%;
 }
 
 .project-unit button .cart-icon {
@@ -141,9 +150,14 @@
 }
 
 .project-unit button .fa {
-	font-size: 30px;
-	position: relative;
-	top: -15px;
+    font-size: 30px;
+    position: relative;
+}
+
+.project-unit button .fa-shopping-cart:before {
+    position: absolute;
+    top: -20px;
+    left: -40px;
 }
 
 .project-unit button span {
@@ -187,8 +201,17 @@
 	text-align: center;
 }
 
-.project-unit .nav-tabs>li.active>a, .project-unit .nav-tabs>li.active>a:focus, .project-unit.nav-tabs>li.active>a:hover {
+.project-unit .nav-tabs {
+	border-bottom: 0px;
+}
+
+.project-unit .nav-tabs>li>a {
 	background: #f4f4f4;
+}
+
+.project-unit .nav-tabs>li.active>a, .project-unit .nav-tabs>li.active>a:focus, .project-unit.nav-tabs>li.active>a:hover {
+	background: #02b2e1;
+	color: #fff;
 }
 
 .project-unit .tab-content .tab-pane h4 {
