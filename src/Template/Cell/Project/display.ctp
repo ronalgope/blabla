@@ -3,7 +3,7 @@
 
 <?php foreach ($projects as $project): ?>
     <li class="col-xs-6 col-md-4">
-        <a href="projects/view/<?php echo $project->id?>" class="wrapper-image">
+        <a href="/projects/view/<?php echo $project->id?>" class="wrapper-image">
             <?= $this->Html->image('house-1.jpg', ['alt' => 'layout-1', 'class' => 'layout-1']);?>
             <?= $this->Html->image('house-9.jpg', ['alt' => 'layout-2', 'class' => 'layout-2']);?>
         </a>
