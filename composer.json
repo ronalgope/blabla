@@ -14,7 +14,8 @@
         "josegonzalez/cakephp-upload": "^3.6",
         "iandenh/cakephp-sendgrid": "*",
         "friendsofcake/bootstrap-ui": "^0.5.1",
-        "dereuromark/cakephp-geo": "^1.0"
+        "dereuromark/cakephp-geo": "^1.0",
+        "veritrans/veritrans-php": "dev-snap"
     },
     "require-dev": {
         "psy/psysh": "@stable",

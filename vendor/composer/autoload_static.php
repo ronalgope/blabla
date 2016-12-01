@@ -7,12 +7,12 @@ namespace Composer\Autoload;
 class ComposerStaticInit3cf07300bb4708feff5cd12835ef3212
 {
     public static $files = array (
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '34122c0574b76bf21c9a8db62b5b9cf3' => __DIR__ . '/..' . '/cakephp/chronos/src/carbon_compat.php',
         'c720f792236cd163ece8049879166850' => __DIR__ . '/..' . '/cakephp/cakephp/src/Core/functions.php',
         'ede59e3a405fb689cd1cebb7bb1db3fb' => __DIR__ . '/..' . '/cakephp/cakephp/src/Collection/functions.php',
         '90236b492da7ca2983a2ad6e33e4152e' => __DIR__ . '/..' . '/cakephp/cakephp/src/I18n/functions.php',
         'b1fc73705e1bec51cd2b20a32cf1c60a' => __DIR__ . '/..' . '/cakephp/cakephp/src/Utility/bootstrap.php',
-        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'a16312f9300fed4a097923eacb0ba814' => __DIR__ . '/..' . '/igorw/get-in/src/get_in.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
@@ -276,7 +276,33 @@ class ComposerStaticInit3cf07300bb4708feff5cd12835ef3212
 
     public static $classMap = array (
         'Mobile_Detect' => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/Mobile_Detect.php',
+        'SnapIntegrationTest' => __DIR__ . '/..' . '/veritrans/veritrans-php/tests/integration/SnapIntegrationTest.php',
         'SqlFormatter' => __DIR__ . '/..' . '/jdorn/sql-formatter/lib/SqlFormatter.php',
+        'VT_Tests' => __DIR__ . '/..' . '/veritrans/veritrans-php/tests/VtTests.php',
+        'VeritransApiRequestorTest' => __DIR__ . '/..' . '/veritrans/veritrans-php/tests/VeritransApiRequestorTest.php',
+        'VeritransConfigTest' => __DIR__ . '/..' . '/veritrans/veritrans-php/tests/VeritransConfigTest.php',
+        'VeritransNotificationIntegrationTest' => __DIR__ . '/..' . '/veritrans/veritrans-php/tests/integration/VtNotificationIntegrationTest.php',
+        'VeritransNotificationTest' => __DIR__ . '/..' . '/veritrans/veritrans-php/tests/VeritransNotificationTest.php',
+        'VeritransSnapApiRequestorTest' => __DIR__ . '/..' . '/veritrans/veritrans-php/tests/VeritransSnapApiRequestorTest.php',
+        'VeritransSnapTest' => __DIR__ . '/..' . '/veritrans/veritrans-php/tests/VeritransSnapTest.php',
+        'VeritransTransactionTest' => __DIR__ . '/..' . '/veritrans/veritrans-php/tests/VeritransTransactionTest.php',
+        'VeritransVtDirectTest' => __DIR__ . '/..' . '/veritrans/veritrans-php/tests/VeritransVtDirectTest.php',
+        'VeritransVtWebTest' => __DIR__ . '/..' . '/veritrans/veritrans-php/tests/VeritransVtWebTest.php',
+        'Veritrans_ApiRequestor' => __DIR__ . '/..' . '/veritrans/veritrans-php/Veritrans/ApiRequestor.php',
+        'Veritrans_Config' => __DIR__ . '/..' . '/veritrans/veritrans-php/Veritrans/Config.php',
+        'Veritrans_Notification' => __DIR__ . '/..' . '/veritrans/veritrans-php/Veritrans/Notification.php',
+        'Veritrans_Sanitizer' => __DIR__ . '/..' . '/veritrans/veritrans-php/Veritrans/Sanitizer.php',
+        'Veritrans_Snap' => __DIR__ . '/..' . '/veritrans/veritrans-php/Veritrans/Snap.php',
+        'Veritrans_SnapApiRequestor' => __DIR__ . '/..' . '/veritrans/veritrans-php/Veritrans/SnapApiRequestor.php',
+        'Veritrans_Transaction' => __DIR__ . '/..' . '/veritrans/veritrans-php/Veritrans/Transaction.php',
+        'Veritrans_VtDirect' => __DIR__ . '/..' . '/veritrans/veritrans-php/Veritrans/VtDirect.php',
+        'Veritrans_VtWeb' => __DIR__ . '/..' . '/veritrans/veritrans-php/Veritrans/VtWeb.php',
+        'VtChargeFixture' => __DIR__ . '/..' . '/veritrans/veritrans-php/tests/utility/VtFixture.php',
+        'VtDirectIntegrationTest' => __DIR__ . '/..' . '/veritrans/veritrans-php/tests/integration/VtDirectIntegrationTest.php',
+        'VtFixture' => __DIR__ . '/..' . '/veritrans/veritrans-php/tests/utility/VtFixture.php',
+        'VtIntegrationTest' => __DIR__ . '/..' . '/veritrans/veritrans-php/tests/integration/VtIntegrationTest.php',
+        'VtTransactionIntegrationTest' => __DIR__ . '/..' . '/veritrans/veritrans-php/tests/integration/VtTransactionIntegrationTest.php',
+        'VtWebIntegrationTest' => __DIR__ . '/..' . '/veritrans/veritrans-php/tests/integration/VtWebIntegrationTest.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
