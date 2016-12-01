@@ -24,7 +24,7 @@
 body {
 	font-family: "Roboto", sans-serif;
 	width: 100%;
-	font-size: 15px;
+	font-size: 14px;
 	color: #000;
 }
 
@@ -69,7 +69,7 @@ a:hover {
 h1 {
 	color: #000;
 	font-family: inherit;
-	font-size: 25px;
+	font-size: 23px;
 	text-transform: capitalize;
 	margin: 0px 0px 15px;
 	line-height: normal;
@@ -78,13 +78,13 @@ h1 {
 h2 {
 	color: inherit;
 	font-family: inherit;
-	font-size: 20px;
+	font-size: 18px;
 	text-transform: capitalize;
 	margin: 0px;
 	line-height: normal;
 }
 
-h3 {
+h3, h4 {
 	color: inherit;
 	font-family: inherit;
 	font-size: 15px;
@@ -92,6 +92,7 @@ h3 {
 	margin: 0px;
 	line-height: normal;
 }
+
 
 h1.title {
 	text-align: center;
@@ -109,6 +110,13 @@ input {
 	height: 34px;
 	padding: 0px 10px;
 	border: 1px solid #000;
+}
+
+.message.error {
+    width: 100%;
+    color: red;
+    background: transparent;
+    margin: 10px 10px 20px;
 }
 
 .bootstrap-select .dropdown-toggle:focus, .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
@@ -360,8 +368,9 @@ header .container {
 }
 
 .newsletter-footer p {
-	font-size: 12px;	
-	margin-top: 5px;
+    margin-top: 7px;
+    display: inline-block;
+    width: 100%;
 }
 
 #footer .copy-right {
@@ -489,6 +498,65 @@ header .container {
 }
 
 
+/*Cart*/
+.cart-page .block-header {
+	margin-top: 20px;
+}
+
+.cart-page .unit-name h1 {
+	text-transform: capitalize;
+	text-align: center;
+}
+
+.cart-page .checkbox input[type=checkbox], .cart-page .checkbox-inline input[type=checkbox], .cart-page .radio input[type=radio], .cart-page .radio-inline input[type=radio] {
+	margin-top: -7px;
+	width: 15px;
+}
+
+.cart-page .cart-price {
+	font-size: 25px;
+	color: red;
+}
+
+.cara-pembayaran {
+	margin: 0px;
+    padding-bottom: 20px;
+}
+
+.cara-pembayaran .block-header, .pilih-pembayaran .block-header, .pilih-pembeli .block-header{
+	text-align: left;
+}
+
+.cara-pembayaran .block-header h1, .pilih-pembayaran .block-header h1, .pilih-pembeli .block-header h1{
+	margin-left: 30px;
+}
+
+.cara-pembayaran .info-pembayaran th {
+	width: 20%;
+}
+
+.cara-pembayaran .info-pembayaran th, .cara-pembayaran .info-pembayaran td {
+	padding: 10px 20px;
+}
+
+.cara-pembayaran .info-pembayaran td {
+	text-transform: capitalize;
+}
+
+.pilih-list {
+	margin-bottom: 20px;
+}
+.pilih-top {
+	
+}
+
+.pilih-desc {
+	background: #f4f4f4;
+	line-height: 30px;
+	margin: 0px;
+}
+
+
 /*Responsive */
 
 @media only screen and (max-width: 992px) {
@@ -500,6 +568,11 @@ header .container {
 @media only screen and (max-width: 768px) {
 	.footer-list, .footer-list .title, .footer-list .medsos-footer {
 		text-align: center;
+	}
+
+	.cart-page .button-wrapper button {
+		width: 100%;
+		margin-top: 20px;
 	}
 }
 
