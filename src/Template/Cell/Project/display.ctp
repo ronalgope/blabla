@@ -1,4 +1,4 @@
-<h1>Project Terbaru</h1>
+<div class="block-header"><hr><h1>Project Terbaru</h1></div>
 <ul class="newest-list row">
 
 <?php foreach ($projects as $project): ?>

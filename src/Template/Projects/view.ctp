@@ -8,6 +8,8 @@
       <div class="view-logo"> <?= $this->Html->image('projects/images/'.$project->logo,array("style"=>"height:100%"),['fullBase' => true]) ?>
       </div>
       <h2><?= h($project->name) ?></h2>
+      <div class="view-desc"><i class="fa fa-quote-left" aria-hidden="true"></i><?= h($project->body); ?><i class="fa fa-quote-right" aria-hidden="true"></i></div>
+      
     </div>
     <!-- View Slider -->
     <div class="view-slider col-sm-12 ">
@@ -64,9 +66,6 @@
   <div class="row row-eq-height dena-map">
     <!--Dena Project-->
     <div class="dena-project col-sm-6">
-      <h1>
-        <?= $this->Text->autoParagraph(h($project->body)); ?>
-      </h1>
       <div class="dena-img">
         <?= $this->Html->image('projects/filename/'.$project->filename,array("class"=>"img-dena")) ?>
       </div>
