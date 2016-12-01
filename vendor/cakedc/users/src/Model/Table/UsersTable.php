@@ -57,6 +57,10 @@ class UsersTable extends Table
             'foreignKey' => 'user_id',
             'className' => 'CakeDC/Users.SocialAccounts'
         ]);
+        $this->hasMany('Orders', [
+           'foreignKey' => 'users_id',
+           'joinType' => 'INNER'
+        ]);
     }
 
     /**

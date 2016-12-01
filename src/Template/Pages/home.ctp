@@ -19,10 +19,6 @@ use Cake\Datasource\ConnectionManager;
 use Cake\Error\Debugger;
 use Cake\Network\Exception\NotFoundException;
 
-if (!Configure::read('debug')):
-    throw new NotFoundException('Please replace src/Template/Pages/home.ctp with your own version.');
-endif;
-
 $cakeDescription = 'Buyhome';
 ?>
 <!DOCTYPE HTML>
@@ -32,16 +28,6 @@ $cakeDescription = 'Buyhome';
   <div class="home-slider">
     <ul class="slider-list owl-carousel">
         <li class="item">
-          <div class="item-img" style="width:100%;height:500px;background-image:url(<?php echo $this->request->webroot . 'img/depan.jpg'; ?>)">
-          <div class="slider-content">
-            <div class="header_title">
-              <h1>The simplest way to find Property</h1>
-              <h4>Lorem Ipsum is simply dummy text of the printing <br>and typesetting industry.</h4>
-            </div>
-            <?= $this->element('search_home');?>
-          </div> 
-        </li>
-        <li class="item">
           <div class="item-img" style="width:100%;height:500px;background-image:url(<?php echo $this->request->webroot . 'img/home-slider/slider1.jpg'; ?>)">
           <div class="slider-content">
             <div class="header_title">
@@ -49,8 +35,9 @@ $cakeDescription = 'Buyhome';
               <h4>Lorem Ipsum is simply dummy text of the printing <br>and typesetting industry.</h4>
             </div>
             <?= $this->element('search_home');?>
-          </div> 
-        </li> 
+          </div>
+
+        </li>
         <li class="item">
           <div class="item-img" style="width:100%;height:500px;background-image:url(<?php echo $this->request->webroot . 'img/home-slider/slider4.jpg'; ?>)">
           <div class="slider-content">
@@ -59,7 +46,7 @@ $cakeDescription = 'Buyhome';
               <h4>Lorem Ipsum is simply dummy text of the printing <br>and typesetting industry.</h4>
             </div>
             <?= $this->element('search_home');?>
-          </div> 
+          </div>
         </li>
     </ul>
   </div>
@@ -70,7 +57,7 @@ $cakeDescription = 'Buyhome';
     ?>
     <a href="#" class="see-more">Selengkapnya...</a>
   </div>
-    
+
 
   <!-- Layanan kami -->
   <?= $this->element('layanan_kami'); ?>

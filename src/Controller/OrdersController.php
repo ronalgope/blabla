@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use CakeDC\Users\Controller\Component\UsersAuthComponent;
+use Cake\Core\Configure;
 /**
  * Orders Controller
  *
@@ -38,6 +39,68 @@ class OrdersController extends AppController
 
     public function successorder(){
 
+    }
+
+    public function bookingfee($id = null){
+      $this->viewBuilder()->layout('dashboard');
+      $order = $this->Orders->get($id, [
+          'contain' => ['Users', 'Units']
+      ]);
+      $this->loadModel('Users');
+      $userArray = $this->Auth->identify();
+      $user = $this->Users->get($userArray['id']);
+      $unitid = $order->units_id;
+      $this->loadModel('Projects');
+      $projects = $this->Projects->find('all',[
+        'order' => 'created DESC',
+        'contain' => ['Units']
+        ]);
+        $projects->matching('Units', function ($q)use ($unitid) {
+    return $q->where(['Units.id =' => $unitid]);
+    });
+      foreach($projects as $project){
+        $this->set('project',$project);
+      }
+
+
+      $this->set('order', $order);
+      $this->set('user',$user);
+      $this->set('avatarPlaceholder', Configure::read('Users.Avatar.placeholder'));
+      $this->set('_serialize', ['order']);
+    }
+
+    public function mydetailorder($id = null){
+      $this->viewBuilder()->layout('dashboard');
+      $order = $this->Orders->get($id, [
+          'contain' => ['Users','Units']
+      ]);
+      $this->loadModel('Users');
+      $userArray = $this->Auth->identify();
+      $user = $this->Users->get($userArray['id']);
+
+      $this->set('order', $order);
+      $this->set('user',$user);
+      $this->set('avatarPlaceholder', Configure::read('Users.Avatar.placeholder'));
+      $this->set('_serialize', ['order']);
+    }
+
+    public function myorder(){
+      $userArray = $this->Auth->identify();
+      $this->loadModel('Users');
+      $user = $this->Users->get($userArray['id']);
+      $id = $user->id;
+      $this->viewBuilder()->layout('dashboard');
+      $orders = $this->Orders->find('all',[
+        'order' => 'created DESC',
+        'contain' => ['Users', 'Units']
+        ]);
+        $orders->matching('Users', function ($q)use ($id) {
+    return $q->where(['Users.id =' => $id]);
+
+  });
+        $this->set('orders',$orders);
+        $this->set('user',$user);
+        $this->set('avatarPlaceholder', Configure::read('Users.Avatar.placeholder'));
     }
 
     public function createorder(){
@@ -83,7 +146,7 @@ class OrdersController extends AppController
           }elseif($this->request->data['optradio2']==1){
             $isbuyforself = 0;
           }
-          $order->price = 1235;
+          $order->price =  $this->request->data['price'];
           $order->status = "NEW";
           $order->isbuyforself = $isbuyforself;
           $order->billing_method = $billing_method;
@@ -108,6 +171,9 @@ class OrdersController extends AppController
       if(!$user){
         $this->redirect(['controller'=>'login']);
       }
+      $this->loadModel('Users');
+      $users = $this->Users->get($user['id']);
+      $this->set('user',$users);
       $thisid = $id;
       $this->loadModel('Projects');
       $this->loadModel('Units');

@@ -68,12 +68,24 @@ $cakeDescription = 'Buyhome';
         <div class="col-lg-8 col-md-6 col-xs-6"> <a class="visible-xs" href="#mobile-menu" id="mobile-menu-button"><i class="fa fa-bars"></i></a>
           <nav id="navigation" class="pull-right">
             <ul>
+
+              <?php
+                if($user):
+               ?>
+               <li>
+                 <a class="hvr-overline-from-center" href="/profile"><i class="fa fa-sign-in" aria-hidden="true"></i>Profile</a>
+               </li>
+              <li class="contact-us-top">
+                  <a class="hvr-overline-from-center" href="/logout"><i class="fa fa-lock" aria-hidden="true"></i>Logout</a>
+              </li>
+            <?php else : ?>
               <li>
                 <a class="hvr-overline-from-center" href="/users/users/register"><i class="fa fa-sign-in" aria-hidden="true"></i>Daftar</a>
               </li>
               <li class="contact-us-top">
                   <a class="hvr-overline-from-center" href="/login"><i class="fa fa-lock" aria-hidden="true"></i>Masuk</a>
               </li>
+            <?php endif;?>
               <li class="login-menu">
                   <a class="hvr-overline-from-center" href="#"><i class="fa fa-users" aria-hidden="true"></i>Forum</a>
               </li>
@@ -111,13 +123,13 @@ $cakeDescription = 'Buyhome';
        <!-- SIDEBAR MENU -->
        <div class="profile-usermenu">
          <ul class="nav">
-           <li class="active">
+           <li>
              <a href="#">
              <i class="glyphicon glyphicon-user"></i>
              Akun Saya </a>
            </li>
            <li>
-             <a href="#">
+             <a href="/orders/myorder">
              <i class="glyphicon glyphicon-home"></i>
              Hunian Pribadi </a>
            </li>

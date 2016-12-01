@@ -1,241 +1,292 @@
-<div class="cart-page">
-  <div class="block-header"><hr><h1>Konfirmasi Pembelian</h1></div>
-  <div class="unit-name">
-    <?php
-      $unit = '';
-      foreach($project->_matchingData as $unt):
-        $unit = $unt;
-      endforeach;
-    ?>
-    <h1><?= $project->name.' '.$unit->name ?></h1>
-    <h1 class="cart-price">Harga: <?= $unit->price ?></h1>
+<div class="property-detail">
+    <div class="container">
+        <div class="col-lg-12 col-md-12 property-detail-inner">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 text-center">
+              <h2>Konfirmasi Pembelian</h2>
+              <?php
+              $unit = '';
+              foreach($project->_matchingData as $unt):
+                $unit = $unt;
+              endforeach;
+                ?>
+                <h4><?= $project->name.' '.$unit->name ?></h4>
+            </div>
+          </div>
+        </div>
   </div>
-
-  <div class="unit-detail row">
-    <div class="cara-pembayaran row col-sm-12">
-      <div class="block-header"><hr><h1>Cara Pembayaran</h1></div>  
-      
-      <div class="table-responsive info-pembayaran">
-        <table class="table table-bordered table-striped">
-          <colgroup>
-            <col class="col-xs-1">
-            <col class="col-xs-7">
-          </colgroup>
-          <tbody>
-            <tr>
-            <tr>
-              <th scope="row">KPR</th>
-              <td>12 SAMPAI 42 BULAN</td>
-            </tr>
-            <tr>
-              <th scope="row">HARD CASH</th>
-              <td>3X PEMBAYARAN SELAMA 3 BULAN</td>
-            </tr>
-            <tr>
-              <th scope="row">CASH BERTAHAP</th>
-              <td>6 SAMPAI 24 BULAN</td>
-            </tr>
-            <tr>
-              <th scope="row">CASH DP</th>
-              <td>3X PEMBAYARAN MAKSIMAL 3 BULAN</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="pilih-pembayaran row col-sm-12">
-      <div class="block-header"><hr><h1>Pilih Cara Pembayaran</h1></div>  
-      <?= $this->Form->create($order, ['url' => ['action' => 'createorder']]); ?>
-      <?= $this->Form->hidden('units_id',['value'=> $unit->id]); ?>
-
-      <!--Pilihan KPR -->
-      <div class="pilih-list row">
-        <div class="col-sm-12 pilih-top">
-          <div class="radio">
-            <label>
-              <input type="radio" name="optradio" id="optionsRadios1" value="0" checked>
-              KPR
-            </label>
-          </div>
-        </div>
-        <div class="col-sm-7 row pilih-desc">
-          <div class="col-sm-5 col-xs-6">Booking Fee</div>
-          <div class="col-sm-5 col-xs-6 col-sm-offset-2 text-right"><?= $unit->bookingfee ?></div>
-
-          <div class="col-sm-5 col-xs-6">Discount (%)</div>
-          <div class="col-sm-2 col-xs-6"> 50% </div>
-          <div class="col-sm-5 col-xs-12 text-right">
-            <?php 
-              $totaldic = $unit->price*(1/2);
-              echo $totaldic;
-            ?>
-          </div>
-
-          <div class="col-sm-5 col-xs-6">Besaran DP (%)</div>
-          <div class="col-sm-2 col-xs-6"> 20% </div>
-          <div class="col-sm-5 col-xs-12 text-right">
-            <?php
-              $total = ($unit->price - $totaldic - $unit->bookingfee)*(1/5);
-            ?>
-            <input type="hidden" name="0dp" value="<?= $total ?>"/>
-            <?= $total ?>
-          </div>
-
-          
-
-          <div class="col-sm-5 col-xs-6">Lama angsuran</div>
-          <div class="col-sm-2 col-xs-6"> 12<input type="hidden" name="0lamaangsur" value="12"/></div>
-          <div class="col-sm-5 col-xs-12 text-right">
-            <?php
-              $totalangsur = $total / 12;
-            ?>
-            <input type="hidden" name="0totalangsur" value="<?= round($totalangsur) ?>"/>
-            <?= round($totalangsur) ?>
-          </div>
-        </div>
-      </div>
-
-      <!--HARD CASH-->
-      <div class="pilih-list row">
-        <div class="col-sm-12 pilih-top">
-          <div class="radio">
-            <label>
-              <input type="radio" name="optradio" id="optionsRadios1" value="1">
-              HARD CASH
-            </label>
-          </div>
-        </div>
-        <div class="col-sm-7 row pilih-desc">
-          <div class="col-sm-5 col-xs-6">Booking Fee</div>
-          <div class="col-sm-5 col-xs-12 col-sm-offset-2 text-right"><?= $unit->bookingfee ?></div>
-
-          <div class="col-sm-5 col-xs-6">Discount (%)</div>
-          <div class="col-sm-2 col-xs-6">50%</div>
-          <div class="col-sm-5 col-xs-12 text-right">
-            <?php
-              $total = $unit->price - ($unit->price * (1/2)) - $unit->bookingfee;
-              ?>
-            <input type="hidden" name="1dp" value="<?= $total ?>"/>
-            <?= $total ?>
-          </div>
-
-          <div class="col-sm-5 col-xs-6">Lama angsuran</div>
-          <div class="col-sm-2 col-xs-6"> 3 <input type="hidden" name="1lamaangsur" value="3"/></div>
-          <div class="col-sm-5 col-xs-12 text-right">
-            <?php
-              $totalangsur = $total / 3;
-            ?>
-            <input type="hidden" name="1totalangsur" value="<?= round($totalangsur) ?>"/>
-            <?= round($totalangsur) ?>
-          </div>
-        </div>
-      </div>
-
-      <!--CASH BERTAHAP -->
-      <div class="pilih-list row">
-        <div class="col-sm-12 pilih-top">
-          <div class="radio">
-            <label>
-              <input type="radio" name="optradio" id="optionsRadios1" value="2">
-              CASH BERTAHAP
-            </label>
-          </div>
-        </div>
-        <div class="col-sm-7 row pilih-desc">
-          <div class="col-sm-5 col-xs-6">Booking Fee</div>
-          <div class="col-sm-5 col-xs-12 col-sm-offset-2 text-right"><?= $unit->bookingfee ?></div>
-
-          <div class="col-sm-5 col-xs-6">Discount (%)</div>
-          <div class="col-sm-2 col-xs-6"> 50% </div>
-          <div class="col-sm-5 col-xs-12 text-right">
-            <?php
-              $total = $unit->price - ($unit->price * (1/2)) - $unit->bookingfee;
-            ?>
-            <input type="hidden" name="2dp" value="<?= $total ?>"/>
-            <?= $total ?>
-          </div>
-          
-
-          <div class="col-sm-5 col-xs-6">Lama angsuran</div>
-          <div class="col-sm-2 col-xs-6"> 12 <input type="hidden" name="2lamaangsur" value="12"/></div>
-          <div class="col-sm-5 col-xs-12 text-right">
-            <?php
-              $totalangsur = $total / 12;
-            ?>
-            <input type="hidden" name="2totalangsur" value="<?= round($totalangsur) ?>"/>
-            <?= round($totalangsur) ?>
-          </div>
-        </div>
-      </div>
-
-      <!--CASH DP -->
-      <div class="pilih-list row">
-        <div class="col-sm-12 pilih-top">
-          <div class="radio">
-            <label>
-              <input type="radio" name="optradio" id="optionsRadios1" value="3">
-              CASH DP
-            </label>
-          </div>
-        </div>
-       <div class="col-sm-7 row pilih-desc">
-          <div class="col-sm-3">Booking Fee</div>
-          <div class="col-sm-2">&nbsp; </div>
-          <div class="col-sm-7 text-right"><?= $unit->bookingfee ?></div>
-
-          <div class="col-sm-5 col-xs-6">Discount (%)</div>
-          <div class="col-sm-2 col-xs-6"> 50% </div>
-          <div class="col-sm-5 col-xs-12 text-right">
-            <?php 
-              $totaldic = $unit->price*(1/2);
-              echo $totaldic;
-            ?>
-          </div>
-
-          <div class="col-sm-5 col-xs-6">Besaran DP (%)</div>
-          <div class="col-sm-2 col-xs-6"> 20% </div>
-          <div class="col-sm-5 col-xs-12 text-right">
-            <?php
-              $total = ($unit->price - ($unit->price*(1/2))-$unit->bookingfee)*(1/5);
-            ?>
-            <input type="hidden" name="3dp" value="<?= $total ?>"/>
-            <?= $total ?>
-          </div>
-          
-
-          <div class="col-sm-5 col-xs-6">Lama angsuran</div>
-          <div class="col-sm-2 col-xs-6"> 2 <input type="hidden" name="3lamaangsur" value="2"/></div>
-          <div class="col-sm-5 col-xs-12 text-right">
-            <?php
-              $totalangsur = $total / 2;
-            ?>
-            <input type="hidden" name="3totalangsur" value="<?= round($totalangsur) ?>"/>
-            <?= round($totalangsur) ?>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="pilih-pembeli">
-    <div class="block-header"><hr><h1>Pilih Pembeli</h1></div>  
-    <div>
-      <div class="radio">
-        <label><input type="radio" name="optradio2" value="0">  <b>Beli untuk diri sendiri</b></label>
-      </div>
-    </div>
-    <div>
-      <div class="radio">
-            <label><input type="radio" name="optradio2" value="1">  <b>Beli untuk orang lain</b></label>
-          </div>
-    </div>
-  </div>
-
-
-  <div class="button-wrapper">
-     <h2><?= $this->Form->button('PESAN SEKARANG'); ?></h2>
-  </div>
-
 </div>
 
+<div class="property-detail">
+    <div class="container">
+
+      </div>
+</div>
+<div class="property-detail">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-8 property-detail-inner">
+          <div class="row">
+            <div class="col-lg-12 col-md-12">
+              <h3>Pilih Pembayaran</h3>
+              <table class="table table-striped">
+                <tr>
+                  <td>
+                    Harga
+                  </td>
+                  <td>
+                  </td>
+                  <td>
+                    <?= $unit->price ?>
+                  </td>
+                </tr>
+                <tr>
+                </tr>
+                <tr>
+                  <td>
+                    <h4>Cara Pembayaran</h4>
+                  </td>
+                  <td>
+                  </td>
+                  <td>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>KPR</b>
+                  </td>
+                  <td>
+                    12 SAMPAI 42 BULAN
+                  </td>
+                  <td>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>HARD CASH</b>
+                  </td>
+                  <td>
+                    3X PEMBAYARAN SELAMA 3 BULAN
+                  </td>
+                  <td>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>CASH BERTAHAP</b>
+                  </td>
+                  <td>
+                    6 SAMPAI 24 BULAN
+                  </td>
+                  <td>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>CASH DP</b>
+                  </td>
+                  <td>
+                    3X PEMBAYARAN MAKSIMAL 3 BULAN
+                  </td>
+                  <td>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<?= $this->Form->create($order, ['url' => ['action' => 'createorder']]); ?>
+<?= $this->Form->hidden('units_id',['value'=> $unit->id]); ?>
+<input type="hidden" name="price" value="<?= $unit->price ?>"/>
+<div class="property-detail">
+    <div class="container">
+        <div class="col-lg-12 col-md-12 property-detail-inner">
+          <div class="row">
+            <div class="col-lg-12 col-md-12">
+              <div class="radio" style="padding-bottom:20px">
+              <label><input type="radio" name="optradio" value="0"><b>KPR</b></label>
+              <div>
+                <table class="table table-condensed">
+                  <tr>
+                    <td style="width:200px">Booking Fee</td>
+                    <td style="width:90px"></td>
+                    <td style="width:160px;text-align:right;padding-right:10px"><input type="hidden" name="0bf" value="<?= $unit->bookingfee ?>"/><?= $unit->bookingfee ?></td>
+                    <td  style="width:200px"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td style="width:200px">Besaran DP (%)</td>
+                    <td style="width:90px">20%</td>
+                    <td style="width:160px;text-align:right;padding-right:10px">
+                      <?php
+                      $total = ($unit->price - ($unit->price*(1/2))-$unit->bookingfee)*(1/5);
+                      ?>
+                      <input type="hidden" name="0dp" value="<?= $total ?>"/>
+                      <?= $total ?></td>
+                      <td  style="width:200px">Discount</td>
+                      <td>50%</td>
+                  </tr>
+                  <tr>
+                    <td style="width:200px" >Lama angsuran</td>
+                    <td style="width:90px">12<input type="hidden" name="0lamaangsur" value="12"/></td>
+                    <td class="success" style="width:160px;text-align:right;padding-right:10px">
+                      <?php
+                      $totalangsur = $total / 12;
+                      ?>
+                      <input type="hidden" name="0totalangsur" value="<?= round($totalangsur) ?>"/>
+                      <?= round($totalangsur) ?></td>
+                    <td  style="width:200px"></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="radio" style="padding-bottom:20px">
+              <label><input type="radio" name="optradio" value="1"><b>HARD CASH</b></label>
+              <div>
+                <table class="table table-condensed">
+                  <tr>
+                    <td style="width:200px">Booking Fee</td>
+                    <td style="width:90px"></td>
+                    <td style="width:160px;text-align:right;padding-right:10px"><input type="hidden" name="1bf" value="<?= $unit->bookingfee ?>"/><?= $unit->bookingfee ?></td>
+                    <td  style="width:200px"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td style="width:200px"></td>
+                    <td style="width:90px"></td>
+                    <td style="width:160px;text-align:right;padding-right:10px">
+                      <?php
+                      $total = $unit->price - ($unit->price * (1/2)) - $unit->bookingfee;
+                      ?>
+                      <?= $total ?></td>
+                      <td  style="width:200px">Discount</td>
+                      <td>50%</td>
+                  </tr>
+                  <tr>
+                    <td style="width:200px" >Lama angsuran</td>
+                    <td style="width:90px">3<input type="hidden" name="1lamaangsur" value="3"/></td>
+                    <td class="success" style="width:160px;text-align:right;padding-right:10px">
+                      <?php
+                      $totalangsur = $total / 3;
+                      ?>
+                      <input type="hidden" name="1totalangsur" value="<?= round($totalangsur) ?>"/>
+                      <?= round($totalangsur) ?></td>
+                    <td  style="width:200px"></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="radio" style="padding-bottom:20px">
+            <label><input type="radio" name="optradio" value="2"><b>CASH BERTAHAP</b></label>
+            <table class="table table-condensed">
+              <tr>
+                <td style="width:200px">Booking Fee</td>
+                <td style="width:90px"></td>
+                <td style="width:160px;text-align:right;padding-right:10px"><input type="hidden" name="2bf" value="<?= $unit->bookingfee ?>"/><?= $unit->bookingfee ?></td>
+                <td  style="width:200px"></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td style="width:200px"></td>
+                <td style="width:90px"></td>
+                <td style="width:160px;text-align:right;padding-right:10px">
+                  <?php
+                  $total = $unit->price - ($unit->price * (1/2)) - $unit->bookingfee;
+                  ?>
+                  <?= $total ?></td>
+                  <td  style="width:200px">Discount</td>
+                  <td>50%</td>
+              </tr>
+              <tr>
+                <td style="width:200px" >Lama angsuran</td>
+                <td style="width:90px">12<input type="hidden" name="2lamaangsur" value="12"/></td>
+                <td class="success" style="width:160px;text-align:right;padding-right:10px">
+                  <?php
+                  $totalangsur = $total / 12;
+                  ?>
+                  <input type="hidden" name="2totalangsur" value="<?= round($totalangsur) ?>"/>
+                  <?= round($totalangsur) ?></td>
+                <td  style="width:200px"></td>
+                <td></td>
+              </tr>
+            </table>
+            </div>
+            <div class="radio" style="padding-bottom:20px">
+            <label><input type="radio" name="optradio" value="3"><b>CASH DP</b></label>
+            <table class="table table-condensed">
+              <tr>
+                <td style="width:200px">Booking Fee</td>
+                <td style="width:90px"></td>
+                <td style="width:160px;text-align:right;padding-right:10px"><input type="hidden" name="3bf" value="<?= $unit->bookingfee ?>"/><?= $unit->bookingfee ?></td>
+                <td  style="width:200px"></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td style="width:200px">Besaran DP (%)</td>
+                <td style="width:90px">20%</td>
+                <td style="width:160px;text-align:right;padding-right:10px">
+                  <?php
+                  $total = ($unit->price - ($unit->price*(1/2))-$unit->bookingfee)*(1/5);
+                  ?>
+                  <input type="hidden" name="3dp" value="<?= $total ?>"/>
+                  <?= $total ?></td>
+                  <td  style="width:200px">Discount</td>
+                  <td>50%</td>
+              </tr>
+              <tr>
+                <td style="width:200px">Lama angsuran</td>
+                <td style="width:90px">2<input type="hidden" name="3lamaangsur" value="2"/></td>
+                <td class="success" style="width:160px;text-align:right;padding-right:10px">
+                  <?php
+                  $totalangsur = $total / 2;
+                  ?>
+                  <input type="hidden" name="3totalangsur" value="<?= round($totalangsur) ?>"/>
+                  <?= round($totalangsur) ?></td>
+                <td  style="width:200px"></td>
+                <td></td>
+              </tr>
+            </table>
+            </div>
+            </div>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="property-detail">
+    <div class="container">
+        <div class="col-lg-12 col-md-12 property-detail-inner">
+          <div class="row">
+            <div class="col-lg-12 col-md-12">
+              <h3>Pilih Pembeli</h3>
+              <table class="table table-condensed">
+                <tr>
+                  <td style="margin-left:10px"><label><input type="radio" name="optradio2" value="0">  <b>Beli untuk diri sendiri</b></label></td>
+                  <td  style="margin-left:10px"><label><input type="radio" name="optradio2" value="1">  <b>Beli untuk orang lain</b></label></td>
+                </tr>
+                <tr>
+
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+  </div>
+</div>
+
+<section class="property-detail">
+    <div class="container">
+        <div class="col-lg-12 col-md-12 property-detail-inner">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 text-center">
+              <h2><?= $this->Form->button('PESAN SEKARANG'); ?></h2>
+            </div>
+          </div>
+        </div>
+  </div>
+</section>

@@ -1,5 +1,5 @@
 <div class="partner-section">
-  <div class="block-header"><hr><h1>Mitra kami</h1></div>
+  <h1>Mitra kami</h1>
   <ul class="partner-list owl-carousel">
     <li class="item">
       <?= $this->Html->image('partner/partner1.png', ['alt' => 'partner Image']);?>

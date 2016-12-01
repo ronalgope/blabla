@@ -46,6 +46,16 @@ class OrdersTable extends Table
             'foreignKey' => 'units_id',
             'joinType' => 'INNER'
         ]);
+
+        $this->hasMany('Invoices', [
+           'foreignKey' => 'orders_id',
+           'joinType' => 'INNER'
+        ]);
+
+        $this->hasOne('Bookingfees', [
+           'foreignKey' => 'orders_id',
+           'joinType' => 'INNER'
+        ]);
     }
 
     /**

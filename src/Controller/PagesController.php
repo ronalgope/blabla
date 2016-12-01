@@ -17,7 +17,7 @@ namespace App\Controller;
 use Cake\Core\Configure;
 use Cake\Network\Exception\NotFoundException;
 use Cake\View\Exception\MissingTemplateException;
-
+use CakeDC\Users\Controller\Component\UsersAuthComponent;
 /**
  * Static content controller
  *
@@ -35,8 +35,17 @@ class PagesController extends AppController
      * @throws \Cake\Network\Exception\NotFoundException When the view file could not
      *   be found or \Cake\View\Exception\MissingTemplateException in debug mode.
      */
+
+    public function initialize(){
+      parent::initialize();
+      $userArray = $this->Auth->identify();
+      $this->loadModel('Users');
+      $user = $this->Users->get($userArray['id']);
+      $this->set('user',$user);
+    }
     public function display()
     {
+
         $path = func_get_args();
 
         $count = count($path);

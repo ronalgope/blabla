@@ -17,7 +17,7 @@ use Cake\Core\Configure;
 </head>
 <body class="register-page row">
   <div class="row col-sm-6 register-wrapper">
-    <div class="block-header"><hr><h1>REGISTRASI</h1></div>
+    <h1 class="page-title col-sm-12">REGISTRASI</h1> 
     <div class="registrasi-detail col-sm-12">
       <?= $this->Form->create($user,array('class'=>'form-inline')); ?>
 
