@@ -16,7 +16,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
-
+use CakeDC\Users\Controller\Component\UsersAuthComponent;
 /**
  * Application Controller
  *
@@ -43,7 +43,16 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
-        $this->loadComponent('CakeDC/Users.UsersAuth');
+        //$this->loadComponent('CakeDC/Users.UsersAuth');
+        $userArray = $this->request->session()->read('Auth.User.id');
+        $this->loadModel('Users');
+        if($userArray){
+          $user = $this->Users->get($userArray);
+        }else{
+          $user = false;
+        }
+
+        $this->set('user',$user);
     }
 
     /**
