@@ -38,10 +38,7 @@ class PagesController extends AppController
 
     public function initialize(){
       parent::initialize();
-      $userArray = $this->Auth->identify();
-      $this->loadModel('Users');
-      $user = $this->Users->get($userArray['id']);
-      $this->set('user',$user);
+
     }
     public function display()
     {

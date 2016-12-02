@@ -71,14 +71,5 @@
             endif;
             ?>
         </div>
-        <div>
-          MY ORDER
-          <?php $cell = $this->cell('Order');
-            echo $cell;
-          ?>
-        </div>
-        <div>
-          MY ACCOUNT
-        </div>
     </div>
 </div>

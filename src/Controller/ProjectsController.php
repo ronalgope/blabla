@@ -58,10 +58,6 @@ class ProjectsController extends AppController
      */
     public function view($id = null)
     {
-      $userArray = $this->Auth->identify();
-      $this->loadModel('Users');
-      $user = $this->Users->get($userArray['id']);
-      $this->set('user',$user);
         $project = $this->Projects->get($id, [
             'contain' => ['Units','Images']
         ]);
