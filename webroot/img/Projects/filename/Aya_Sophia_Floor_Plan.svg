@@ -62,7 +62,7 @@
      d="m 311.50442,617.34513 5.66372,189.73452 546.54867,-14.1593 0,-186.90265 z"
      id="13"
      inkscape:connector-curvature="0"
-     inkscape:label="#path3350" />
+     inkscape:label="#path3350" class="clicked"/>
   <path
      style="fill:#ff0000;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:0.0591716"
      d="M 954.33628,860.88496 960,1186.5487 l 359.646,246.3717 -11.3274,-577.69916 z"

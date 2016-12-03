@@ -252,6 +252,14 @@
 	display: block;
 }
 
+.dena-img path {
+	fill-opacity: 0;
+}
+
+.dena-img path.clicked {
+	fill-opacity: 0.3 !important;
+}
+
 @media only screen and (max-width: 768px) {
 	.dena-project {
 		border-right: 0px;
