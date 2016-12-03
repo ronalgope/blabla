@@ -109,6 +109,12 @@
 	display: inline-block;
 }
 
+
+.dena-img svg {
+	width: 100%;
+	height: auto;
+}
+
 .peta-lokasi {
 	padding: 30px 0px;
 }
