@@ -80,7 +80,7 @@
       <h1>Unit Yang Tersedia</h1>
       <div class="all-unit row">
         <div id="svg_id"></div>
-        <ul class="nav nav-tabs col-sm-12" id="lb-tabs">
+        <!--<ul class="nav nav-tabs col-sm-12" id="lb-tabs">
           <?php
               $current_tab = '';
           ?>
@@ -98,8 +98,8 @@
               $i++;
             endforeach;
           ?>
-        </ul>
-        <div class="tab-content col-sm-12">
+        </ul>-->
+        <div class="tab-content-svg col-sm-12">
           <?php foreach($project->units as $unit2):
             $tab = $unit2->id;
             $content_class = ($tab==$current_tab) ? 'active' : '' ;
@@ -140,10 +140,17 @@
 
   <script type="text/javascript">
     $(document).ready(function () {
+      $(".tab-content-svg .tab-pane").each(function(){
+        var base = $(this);
+        var tab_id = base.attr('id');
         $('path').click(function () {
-          alert($(this).attr('id'));
           var svg_id = $(this).attr('id');
-          $('#svg_id').append(svg_id);
+          base.removeClass("active");
+          if (tab_id == svg_id) {
+            base.addClass('active');
+          }
         });
+      });
+        
     });
   </script>
