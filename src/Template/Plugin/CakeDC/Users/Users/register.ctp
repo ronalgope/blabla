@@ -42,10 +42,40 @@ use Cake\Core\Configure;
       <div class="col-sm-6">
         <?= $this->Form->input('last_name');?>
       </div>
-
       <div class="col-sm-12">
         <?= $this->Form->input('handphone', ['type' => 'tel']);?>
       </div>
+      <div class="col-sm-12">
+        <?= $this->Form->input('no_tlp1', ['label'=>'Nomer Telepon Saudara/Kerabat Terdekat','type' => 'tel']);?>
+      </div>
+      <div class="col-sm-12">
+        <?= $this->Form->input('no_tlp2', ['label'=>'Nomer Telepon Saudara/Kerabat Terdekat (optional)','type' => 'tel']);?>
+      </div>
+      <div class="col-sm-6">
+        <?= $this->Form->input('age',['label'=>'Umur','type'=>'text']);?>
+      </div>
+      <div class="col-sm-6">
+        <?= $this->Form->input('dob',['label'=>'Tgl Lahir','type'=>'text']);?>
+      </div>
+      <div class="col-sm-12">
+        <?= $this->Form->input('kartukeluarga', ['label'=>'No. Kartu Keluarga','type' => 'number']);?>
+      </div>
+      <div class="col-sm-12">
+        <?= $this->Form->input('no_rekening', ['label'=>'No. Rekening Bank','type' => 'number']);?>
+      </div>
+      <div class="col-sm-12">
+        <?= $this->Form->input('no_npwp', ['label'=>'No. NPWP','type' => 'number']);?>
+      </div>
+      <div class="col-sm-6">
+        <?= $this->Form->input('ktp1', ['label'=>'KTP 1 (Suami)']);?>
+      </div>
+      <div class="col-sm-6">
+        <?= $this->Form->input('ktp2', ['label'=>'KTP 2 (Istri)']);?>
+      </div>
+      <div class="col-sm-12">
+        <?= $this->Form->input('foto', ['label'=>'Foto Diri']);?>
+      </div>
+
 
       <?php 
         if (Configure::read('Users.Tos.required')) {
