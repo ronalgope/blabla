@@ -16,7 +16,7 @@ class OrdersController extends AppController
   {
       parent::initialize();
 
-      $this->loadComponent('CakeDC/Users.UsersAuth');
+      // $this->loadComponent('CakeDC/Users.UsersAuth');
       //$this->Auth->allow('view','cart','createorder');
 
   }

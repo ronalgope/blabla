@@ -55,7 +55,7 @@ $cakeDescription = 'Buyhome';
     <?php $cell = $this->cell('Project');
       echo $cell;
     ?>
-    <a href="#" class="see-more">Selengkapnya...</a>
+    <a href="/projects/viewall" class="see-more">Selengkapnya...</a>
   </div>
 
 
