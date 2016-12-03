@@ -12,7 +12,7 @@
         "cakephp/plugin-installer": "*",
         "cakedc/users": "^3.2",
         "josegonzalez/cakephp-upload": "^3.6",
-        "iandenh/cakephp-sendgrid": "*",
+        "iandenh/cakephp-sendgrid": "^1.4",
         "friendsofcake/bootstrap-ui": "^0.5.1",
         "dereuromark/cakephp-geo": "^1.0",
         "veritrans/veritrans-php": "dev-snap"

@@ -25,6 +25,20 @@ class ProjectsController extends AppController
         $this->set('_serialize', ['projects']);
     }
 
+        
+    /**
+     * List view for user
+     */
+    
+    public function viewall()
+    {
+        $projects = $this->paginate($this->Projects);
+
+        $this->set(compact('projects'));
+        $this->set('_serialize', ['projects']);
+    }
+
+
     /**
     *
     *Dashboard method

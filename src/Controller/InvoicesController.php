@@ -3,6 +3,7 @@ namespace App\Controller;
 require_once ROOT .DS. 'vendor' . DS . 'veritrans' . DS . 'veritrans-php' . DS . 'Veritrans.php';
 
 use App\Controller\AppController;
+use Cake\Mailer\Email;
 use Veritrans_Config;
 use Veritrans_VtWeb;
 /**
@@ -221,4 +222,13 @@ class InvoicesController extends AppController
       }
 
     }
+
+    public function testmail(){
+      $email = new Email('default');
+      $email->from(['coba@idbuyhome.local' => 'Dari Id Buy Home'])
+          ->to('dedeo.widodo@gmail.com')
+          ->subject('Ini coba email dari cake php')
+          ->send('Hallo ini My message, saya kirim dari cake php. kalau anda lihat ini berarti mailing berhasil');      
+    }
+
 }
