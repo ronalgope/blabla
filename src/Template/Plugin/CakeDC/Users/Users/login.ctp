@@ -20,13 +20,13 @@ use Cake\Core\Configure;
 </head>
 <body class="login-page row">
    <div class="row col-sm-6 login-wrapper">
-    <h1 class="page-title col-sm-12">LOGIN</h1> 
+    <div class="block-header"><hr><h1>LOGIN</h1> </div>
     <div class="login-detail col-sm-12">
         <?= $this->Flash->render('auth') ?>
         <?= $this->Form->create() ?>
 
         <div class="col-sm-12">
-            <?= $this->Form->input('email', ['required' => true]) ?>
+            <?= $this->Form->input('email', ['required' => true, 'type' => 'email']) ?>
         </div>
 
         <div class="col-sm-12">
