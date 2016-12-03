@@ -244,6 +244,14 @@
 	padding-bottom: 0px;
 }
 
+.tab-content-svg .tab-pane {
+	display: none;
+}
+
+.tab-content-svg .tab-pane.active {
+	display: block;
+}
+
 @media only screen and (max-width: 768px) {
 	.dena-project {
 		border-right: 0px;
