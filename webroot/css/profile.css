@@ -1,0 +1,117 @@
+.profile-sidebar-mobile {
+	display: none;
+}
+
+.profile-usertitle-name {
+	text-align: center;
+}
+
+.profile-sidebar {
+	background: #f4f4f4;
+	padding: 20px;
+}
+
+.prof-changepass {
+	font-size: 13px;
+	color: #02b2e1;
+	margin-top: 5px;
+}
+
+.profile-userpic {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.profile-userpic img {
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+
+.profile-usermenu {
+	margin-top: 20px;
+}
+
+.profile-usermenu li .glyphicon {
+	margin-right: 5px;
+}
+
+.profile-content {
+	padding: 20px;
+	border: 1px solid #000;
+	border-radius: 5px;
+	overflow: auto;
+}
+
+.profile-img {
+	text-align: center;
+}
+
+.profile-img img {
+	width: 100%;
+	height: auto;
+}
+
+.profile-img .user-name {
+	margin-top: 20px;
+}
+
+.profile-users .subheader {
+	margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 767px) { 
+	.profile-sidebar-mobile {
+		display: inline-block;
+		position: relative;
+		width: 100%;
+	} 
+
+	.profile-sidebar-mobile .fa {
+		position: absolute;
+		top: 4px; 
+		right: 0px;
+		font-size: 20px;
+	}
+
+	.profile-sidebar-wrapper {
+		padding: 0px;
+		margin-bottom: 20px;
+		position: relative;
+	}
+	.profile-sidebar {
+		padding: 10px 20px;
+	}
+
+	.profile-sidebar-mobile h1 {
+		margin: 0px;
+	}
+
+	.profile-usermenu {
+		position: absolute;
+	    top: 30px;
+	    background: #f4f4f4;
+	    width: 100%;
+	    left: 0px;
+	    z-index: 10;
+	    padding: 20px;
+	    border: 1px solid #f4f4f4;
+	    border-radius: 5px;
+	    display: none;
+	    font-size: 15px;
+	}
+
+	.profile-sidebar .profile-userpic, .profile-sidebar .profile-usertitle {
+		display: none;
+	}
+
+	.profile-img {
+		padding: 0px;
+	}
+
+	.profile-content {
+		padding: 10px;
+	}
+
+
+}
