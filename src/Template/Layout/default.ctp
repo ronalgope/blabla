@@ -59,42 +59,7 @@ $cakeDescription = 'Buyhome';
 <body>
 
   <!-- Header Start -->
-  <header id="navigation header-container-box" class="navigation affix-top menu-line" data-offset-top="2" data-spy="affix">
-    <div class="container" id="menu-nav">
-      <div class="row">
-        <div class="col-lg-4 col-md-6 col-xs-6">
-          <div class="logo"><a href="/pages/home"><?= $this->Html->image('logo2.png', array('id' => 'logo-header')); ?></a></div>
-        </div>
-        <!-- /.logo -->
-        <div class="col-lg-8 col-md-6 col-xs-6"> <a class="visible-xs" href="#mobile-menu" id="mobile-menu-button"><i class="fa fa-bars"></i></a>
-          <nav id="navigation" class="pull-right">
-            <ul>
-              <?php
-                if($user):
-               ?>
-               <li>
-                 <a class="hvr-overline-from-center" href="/profile"><i class="fa fa-user" aria-hidden="true"></i></i>Profile</a>
-               </li>
-              <li class="contact-us-top">
-                  <a class="hvr-overline-from-center" href="/logout"><i class="fa fa-unlock-alt" aria-hidden="true"></i>Logout</a>
-              </li>
-            <?php else : ?>
-              <li>
-                <a class="hvr-overline-from-center" href="/users/users/register"><i class="fa fa-sign-in" aria-hidden="true"></i>Daftar</a>
-              </li>
-              <li class="contact-us-top">
-                  <a class="hvr-overline-from-center" href="/login"><i class="fa fa-lock" aria-hidden="true"></i>Masuk</a>
-              </li>
-            <?php endif;?>
-              <li class="login-menu">
-                  <a class="hvr-overline-from-center" href="#"><i class="fa fa-users" aria-hidden="true"></i>Forum</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
+  <?= $this->element('header');?>
 
   <!-- Main content-->
   <div id="main-container">
@@ -103,60 +68,7 @@ $cakeDescription = 'Buyhome';
   <!-- Main contentend-->
 
   <!-- Footer -->
-  <div id="footer">
-    <div id="footer-container">
-      <ul class="footer-list row">
-        <li class="buy-home-about col-md-3 col-sm-6 col-xs-12">
-          <h1 class="title">
-            Buyhome
-          </h1>
-          <ul class="footer-sublist">
-            <li><a href="#">Tentang Buyhome</a></li>
-            <li><a href="#">Aturan Penggunaan</a></li>
-            <li><a href="#">Karir</a></li>
-            <li><a href="#">Mitra buyhome</a></li>
-          </ul>
-        </li>
-        <li class="pembeli-footer col-md-3 col-sm-6 col-xs-12">
-          <h1 class="title">
-            Pembeli
-          </h1>
-          <ul class="footer-sublist">
-            <li><a href="#">Cara Membeli</a></li>
-            <li><a href="#">Keamanan Pembayaran</a></li>
-            <li><a href="#">Simulasi KPR</a></li>
-            <li><a href="#">Artikel</a></li>
-          </ul>
-        </li>
-        <li class="mensos-temukan col-md-3 col-sm-6 col-xs-12">
-          <h1 class="title">
-            Temukan Kami di
-          </h1>
-          <div class="medsos-footer">
-            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i>&nbsp;</a>
-            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i>&nbsp;</a>
-            <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i>&nbsp;</a>
-            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i>&nbsp;</a>
-          </div>
-        </li>
-        <li class="newsletter-footer col-md-3 col-sm-6 col-xs-12">
-          <h1 class="title">
-            Buyhome News Letter
-          </h1>
-          <form action="#" class="searchform">
-            <input type="text" placeholder="Your email address" />
-            <button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
-            <p>Dapatkan berita terbaru dari <br />
-              website kami...</p>
-          </form>
-        </li>
-      </ul>
-
-    </div>
-    <div class="copy-right">
-      Copyright © 2016 PT Buy Group Indonesia
-    </div>
-  </div>
+  <?= $this->element('footer');?>
   <!-- footer-end-->
 </body>
 </html>

@@ -39,6 +39,7 @@ button {
     border-radius: 5px;
     position: relative;
     text-align: center;
+    min-width: 300px;
 }
 
 p {
@@ -366,6 +367,7 @@ header .container {
     margin: 0px;
     padding: 7px 17px;
     color: #fff;
+    min-width: inherit;
 }
 
 .newsletter-footer p {
@@ -565,6 +567,26 @@ header .container {
 	margin: 0px;
 }
 
+/*Changepass user*/
+.usesr-changepass-wrapper {
+    margin: 0 auto;
+    display: block;
+    float: none;
+    padding: 20px;
+}
+
+.usesr-changepass-wrapper button {
+	margin-top: 20px;
+}
+
+.usesr-changepass-wrapper fieldset {
+	margin-top: 30px;
+}
+
+.usesr-changepass-wrapper fieldset .input {
+	margin-top: 10px;
+}
+
 
 /*Responsive */
 
@@ -574,7 +596,13 @@ header .container {
 	}
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
+	button {
+		min-width: inherit;
+	}
+	header .container {
+		padding: 0px;
+	}
 	.footer-list, .footer-list .title, .footer-list .medsos-footer {
 		text-align: center;
 	}
@@ -582,6 +610,24 @@ header .container {
 	.cart-page .button-wrapper button {
 		width: 100%;
 		margin-top: 20px;
+	}
+
+	.usesr-changepass-wrapper button {
+		width: 100%;
+	}
+
+	.usesr-changepass-wrapper .block-header {
+		height: auto;
+	}
+
+	.usesr-changepass-wrapper .block-header h1 {
+		width: 100%;
+		max-width: inherit;
+	}
+
+	.usesr-changepass-wrapper .block-header hr {
+		display: none;
+
 	}
 }
 

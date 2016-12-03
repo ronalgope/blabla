@@ -95,4 +95,10 @@ $(document).ready(function(){
   });
 
 
+  /*Profile*/
+  $(".profile-sidebar-mobile").click(function(){
+    $(".profile-usermenu").slideToggle();
+  });
+
+
 });

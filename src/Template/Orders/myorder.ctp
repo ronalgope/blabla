@@ -1,5 +1,5 @@
 <h1>Hunian Pribadi</h1>
-<table class="table table-striped">
+<table class="table table-striped table-responsive">
   <thead>
     <td>ID</td>
     <td>Unit</td>
