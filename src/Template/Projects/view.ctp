@@ -69,7 +69,9 @@
         <?= $this->Text->autoParagraph(h($project->body)); ?>
       </h1>
       <div class="dena-img">
-        <?= $this->Html->image('projects/filename/'.$project->filename,array("class"=>"img-dena")) ?>
+        <?php // $this->Html->image('projects/filename/'.$project->filename,array("class"=>"img-dena")) ?>
+        <?php echo file_get_contents('img/projects/filename/'.$project->filename); ?>
+        
       </div>
     </div>
 
@@ -77,6 +79,7 @@
     <div class="project-unit col-sm-6">
       <h1>Unit Yang Tersedia</h1>
       <div class="all-unit row">
+        <div id="svg_id"></div>
         <ul class="nav nav-tabs col-sm-12" id="lb-tabs">
           <?php
               $current_tab = '';
@@ -132,7 +135,15 @@
 
   </div>
 
-
-
   </body>
   </html>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+        $('path').click(function () {
+          alert($(this).attr('id'));
+          var svg_id = $(this).attr('id');
+          $('#svg_id').append(svg_id);
+        });
+    });
+  </script>
