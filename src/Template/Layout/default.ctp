@@ -73,10 +73,10 @@ $cakeDescription = 'Buyhome';
                 if($user):
                ?>
                <li>
-                 <a class="hvr-overline-from-center" href="/profile"><i class="fa fa-sign-in" aria-hidden="true"></i>Profile</a>
+                 <a class="hvr-overline-from-center" href="/profile"><i class="fa fa-user" aria-hidden="true"></i></i>Profile</a>
                </li>
               <li class="contact-us-top">
-                  <a class="hvr-overline-from-center" href="/logout"><i class="fa fa-lock" aria-hidden="true"></i>Logout</a>
+                  <a class="hvr-overline-from-center" href="/logout"><i class="fa fa-unlock-alt" aria-hidden="true"></i>Logout</a>
               </li>
             <?php else : ?>
               <li>
