@@ -5,6 +5,7 @@
 	font-size: 13px;
 	color: #828282;
 }
+
 .view-project .view-desc .fa {
 	color: #828282;
 	margin: 0px 5px;
@@ -139,7 +140,7 @@
 .project-unit button a {
 	width: 100%;
 	display: inline-block;
-	padding: 15px 20px 15px 60px;
+	padding: 15px 20px 15px 50px;
 }
 
 .project-unit button {
@@ -273,5 +274,14 @@
 	.project-unit button {
 		text-align: center;
 		width: 100%;
+	}
+
+	.view-project .block-header {
+		height: auto;
+	}
+
+	.view-project .block-header h1 {
+		width: 100%;
+		min-width: inherit;
 	}
 }

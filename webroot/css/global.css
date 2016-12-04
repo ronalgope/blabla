@@ -161,6 +161,10 @@ input {
     max-width: 80%;
 }
 
+.home-search button {
+	min-width: inherit;
+}
+
 header .hvr-overline-from-center:hover:before, header .hvr-overline-from-center:focus:before, header .hvr-overline-from-center:active:before {
 	top: inherit;
 	bottom: 0;
