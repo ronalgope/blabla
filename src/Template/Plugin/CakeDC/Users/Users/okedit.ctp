@@ -9,10 +9,8 @@
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 ?>
-
 <div class="profile-users row">
     <div class="profile-img col-sm-3 col-xs-4">
-        <?= $this->Html->image(empty($user->avatar) ? $avatarPlaceholder : $user->avatar, ['width' => '180', 'height' => '180']); ?>
         <h3 class="user-name">
             <?=
             $this->Html->tag(
@@ -155,6 +153,6 @@
 <hr>
 <div class="profile-users row">
     <div class="col-sm-12">
-    <?= $this->Html->link(__d('CakeDC/Users', 'Edit'), ['plugin' => 'CakeDC/Users', 'controller' => 'Users', 'action' => 'edit',$user->id]); ?>
+    <?= $this->Html->link(__d('CakeDC/Users', 'Edit'), ['plugin' => 'CakeDC/Users', 'controller' => 'Users', 'action' => 'edit']); ?>
     </div>
 </div>

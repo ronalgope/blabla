@@ -40,8 +40,27 @@ class UsersController extends AppController
     use ActivationTrait;
 
 
-    // public function register(){
-    // 	echo 'aaaaaaaaaa';
-    // }
+    public function okedit($id = null)
+    {
+        $table = $this->loadModel();
+        $tableAlias = $table->alias();
+        $entity = $table->get($id, [
+            'contain' => []
+        ]);
+        $this->set($tableAlias, $entity);
+        $this->set('tableAlias', $tableAlias);
+        $this->set('_serialize', [$tableAlias, 'tableAlias']);
+        if (!$this->request->is(['patch', 'post', 'put'])) {
+            return;
+        }
+        $entity = $table->patchEntity($entity, $this->request->data);
+        $singular = Inflector::singularize(Inflector::humanize($tableAlias));
+        if ($table->save($entity)) {
+            $this->Flash->success(__d('CakeDC/Users', 'The {0} has been saved', $singular));
+
+            return $this->redirect(['action' => 'index']);
+        }
+        $this->Flash->error(__d('CakeDC/Users', 'The {0} could not be saved', $singular));
+    }
 
 }
