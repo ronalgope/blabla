@@ -253,8 +253,16 @@
 	display: block;
 }
 
+.dena-img {
+	border: 1px solid #000;
+}
+
 .dena-img path {
 	fill-opacity: 0;
+}
+
+.dena-img #svg-pan-zoom-controls path {
+	fill-opacity: 1;
 }
 
 .dena-img path.clicked {
