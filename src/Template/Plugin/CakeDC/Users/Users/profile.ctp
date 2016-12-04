@@ -32,7 +32,7 @@
     <div class="col-sm-9 col-xs-8">
         <div class="subheader">
             <h2><?= __d('CakeDC/Users', 'Username') ?></h2>
-            <p><?= h($user->username) ?>aaaaaaaaa</p>
+            <p><?= h($user->username) ?></p>
         </div>
         
         <div class="subheader">
