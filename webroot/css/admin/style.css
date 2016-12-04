@@ -13,6 +13,10 @@ body{
 	-webkit-font-smoothing: antialiased;
 }
 
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+	padding: 10px 0px;
+}
+
 
 h1,h2,h3,h4,h5,h6{
 	padding: 2px 0px;

@@ -167,7 +167,7 @@ echo $this->Html->script(array(
 <?= $this->Html->script('admin/jquery.prettyPhoto') ?>
 <?= $this->Html->script('admin/jquery.slimscroll.min') ?>
 <?= $this->Html->script('admin/jquery.dataTables.min') ?>
-
+<?= $this->Html->script('admin/jquery.noty') ?>
 <?= $this->Html->script('admin/excanvas.min') ?>
 <?= $this->Html->script('admin/jquery.flot') ?>
 <?= $this->Html->script('admin/jquery.flot.resize') ?>

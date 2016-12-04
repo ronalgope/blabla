@@ -38,19 +38,8 @@
               ?>
           </fieldset>
           <fieldset class="well" >
-            <h2><?php echo __('Unit');?></h2>
+            <h2><?php echo __('Image');?></h2>
             <table id="image-table" class="table">
-                <thead>
-                    <tr>
-                        <th>Type Unit</th>
-                        <th>Spesifikasi</th>
-                        <th>Fasilitas</th>
-                        <th>Harga</th>
-                        <th>Booking Fee</th>
-                        <th>Down Payment (%)</th>
-                        <th>Tersedia (unit)</th>
-                    </tr>
-                </thead>
                 <tbody></tbody>
                 <tfoot>
                     <tr>
