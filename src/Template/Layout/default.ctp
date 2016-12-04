@@ -49,6 +49,7 @@ $cakeDescription = 'Buyhome';
 
     <?= $this->Html->script('jquery.matchHeight');?>
     <?= $this->Html->script('owl.carousel2.thumbs');?>
+    <?= $this->Html->script('svg-pan-zoom');?>
 
 
 

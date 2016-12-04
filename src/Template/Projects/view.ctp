@@ -155,3 +155,21 @@
         
     });
   </script>
+
+  <script>
+      // Don't use window.onLoad like this in production, because it can only listen to one function.
+      window.onload = function() {
+        var panZoom = window.panZoom = svgPanZoom('.dena-img svg', {
+          zoomEnabled: true,
+          controlIconsEnabled: true,
+          fit: 1,
+          center: 1
+        });
+
+        $(window).resize(function(){
+          panZoom.resize();
+          panZoom.fit();
+          panZoom.center();
+        })
+      };
+    </script>
