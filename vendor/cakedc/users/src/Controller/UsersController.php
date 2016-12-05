@@ -38,4 +38,10 @@ class UsersController extends AppController
     use SimpleCrudTrait;
     use SocialTrait;
     use ActivationTrait;
+
+
+    // public function register(){
+    // 	echo 'aaaaaaaaaa';
+    // }
+
 }
