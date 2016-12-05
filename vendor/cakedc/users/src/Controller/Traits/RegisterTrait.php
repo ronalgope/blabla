@@ -122,7 +122,7 @@ trait RegisterTrait
      */
     protected function _afterRegister(EntityInterface $userSaved)
     {
-        $this->_sendkodeactivasi($userSaved);
+        // $this->_sendkodeactivasi($userSaved);
         $validateEmail = (bool)Configure::read('Users.Email.validate');
         //$message = __d('CakeDC/Users', 'Kode validasi sudah dikirimkan ke no. HP anda. Silahkan lakukan aktivasi untuk melanjutkan proses registrasi');
         //$message = __d('CakeDC/Users', 'You have registered successfully, please log in');
