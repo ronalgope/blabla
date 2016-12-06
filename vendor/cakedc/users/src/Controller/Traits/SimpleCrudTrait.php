@@ -44,6 +44,7 @@ trait SimpleCrudTrait
      */
     public function view($id = null)
     {
+        $this->viewBuilder()->layout('admin');
         $table = $this->loadModel();
         $tableAlias = $table->alias();
         $entity = $table->get($id, [
