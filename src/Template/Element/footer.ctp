@@ -7,10 +7,10 @@
             Buyhome
           </h1>
           <ul class="footer-sublist">
-            <li><a href="#">Tentang Buyhome</a></li>
-            <li><a href="#">Aturan Penggunaan</a></li>
-            <li><a href="#">Karir</a></li>
-            <li><a href="#">Mitra buyhome</a></li>
+            <li><?= $this->Html->link('Tentang Buyhome',['controller'=>'Pages','action'=>'tentang']) ?></li>
+            <li><?= $this->Html->link('Aturan Penggunaan',['controller'=>'Pages','action'=>'aturan_pengguna']) ?></li>
+            <li><?= $this->Html->link('Karir',['controller'=>'Pages','action'=>'karir']) ?></li>
+            <li><?= $this->Html->link('Mitra Buyhome',['controller'=>'Pages','action'=>'mitra']) ?></li>
           </ul>
         </li>
         <li class="pembeli-footer col-md-3 col-sm-6 col-xs-12">
@@ -18,9 +18,9 @@
             Pembeli
           </h1>
           <ul class="footer-sublist">
-            <li><a href="#">Cara Membeli</a></li>
-            <li><a href="#">Keamanan Pembayaran</a></li>
-            <li><a href="#">Simulasi KPR</a></li>
+            <li><?= $this->Html->link('Cara Membeli',['controller'=>'Pages','action'=>'cara_membeli']) ?></li>
+            <li><?= $this->Html->link('Keamanan Pembayaran',['controller'=>'Pages','action'=>'keamanan']) ?></li>
+            <li><?= $this->Html->link('Simulasi KPR',['controller'=>'Pages','action'=>'simulasi']) ?></li>
             <li><a href="#">Artikel</a></li>
           </ul>
         </li>
