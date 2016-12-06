@@ -217,6 +217,8 @@ class OrdersController extends AppController
 
     public function adminview($id = null)
     {
+        $this->viewBuilder()->layout('admin');
+
         $order = $this->Orders->get($id, [
             'contain' => []
         ]);
