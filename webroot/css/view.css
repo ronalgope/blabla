@@ -19,6 +19,10 @@
 	margin-bottom: 30px;
 }
 
+.view-heading h4 {
+  margin-top: 5px;
+}
+
 .view-heading img {
 	max-height: 200px;
 	width: auto;
@@ -32,7 +36,7 @@
 }
 
 .view-slider {
-	background: #cfced3;
+	background: #fff;
 	padding: 20px 0px;
 }
 
@@ -61,7 +65,7 @@
 .view-slider-list .owl-custom-next,  .view-slider-list .owl-custom-prev {
     font-size: 50px;
     cursor: pointer;
-    color: #fff;
+    color: #cfced3;
 }
 
 .view-slider-list .owl-custom-next:hover,  .view-slider-list .owl-custom-prev:hover {
@@ -110,6 +114,42 @@
 	display: inline-block;
 }
 
+.dena-info {
+		display: inline-block;
+		width: 100%;
+		margin-top: 20px;
+}
+
+.dena-info li:first-child {
+	font-weight: bold;
+}
+
+.dena-info li {
+	display: inline-block;
+	width: 100%;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+.dena-info li .info-icon {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	float: left;
+	margin: 2px 10px 0px 0px;
+}
+
+.dena-info li.tersedia-info .info-icon {
+	background: green;
+}
+
+.dena-info li.menunggu-info .info-icon {
+	background: yellow;
+}
+
+.dena-info li.terjual-info .info-icon {
+	background: red;
+}
 
 .dena-img svg {
 	width: 100%;
@@ -118,6 +158,11 @@
 
 .peta-lokasi {
 	padding: 30px 0px;
+}
+
+.peta-lokasi #map {
+  width: 100%;
+  height: 300px;
 }
 
 .peta-lokasi h1 {
@@ -259,14 +304,37 @@
 
 .dena-img path {
 	fill-opacity: 0;
+  fill: transparent !important;
 }
 
 .dena-img #svg-pan-zoom-controls path {
 	fill-opacity: 1;
+  fill: black !important;
 }
 
 .dena-img path.clicked {
-	fill-opacity: 0.3 !important;
+	fill-opacity: 0.5 !important;
+  stroke-width: 10px !important;
+}
+
+.dena-img path.tersedia {
+	fill-opacity: 0.5 !important;
+  fill: green !important;
+}
+
+.dena-img path.menunggu {
+	fill-opacity: 0.5 !important;
+  fill: yellow !important;
+}
+
+.dena-img path.terjual {
+	fill-opacity: 0.5 !important;
+  fill: red !important;
+}
+
+.dena-img path.clicked,  .dena-img path.tersedia.clicked, .dena-img path.menunggu.clicked, .dena-img path.terjual.clicked{
+	stroke-width: 10px !important;
+	stroke: #f4f4f4 !important;
 }
 
 @media only screen and (max-width: 768px) {
@@ -275,7 +343,7 @@
 		border-bottom: 1px solid #9e9e9e
 	}
 
-	.project-unit .tab-content { 
+	.project-unit .tab-content {
 		margin-top: 10px;
 	}
 

@@ -8,12 +8,14 @@
             <?= $this->Html->image('house-9.jpg', ['alt' => 'layout-2', 'class' => 'layout-2']);?>
         </a>
         <div class="wrapper-content">
-            <div class="about-house"><?= $this->Html->link(h($project->name),array('controller'=>'projects','action'=>'view',$project->id),array('class'=>'title'))?>
+            <div class="about-house row">
+              <div class="project-name col-sm-8"><?= $this->Html->link(h($project->name),array('controller'=>'projects','action'=>'view',$project->id),array('class'=>'title'))?>
+                <div class="more-info-house">
+                    <div class="place-house"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> Sekupang Batam</a></div>
+                </div>
+              </div>
+            <div class="new-logo col-sm-4"><?= $this->Html->image('projects/images/'.$project->logo,array("style"=>"height:100%"),['fullBase' => true]) ?></div>
 
-                <p class="text"><?= h($project->body) ?></p></div>
-            <div class="more-info-house">
-                <div class="place-house"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> Sekupang Batam</a></div>
-            </div>
         </div>
     </li>
   <?php endforeach; ?>

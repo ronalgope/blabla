@@ -1,4 +1,4 @@
-<h1>Hunian Pribadi</h1>
+<div class="block-header"><hr><h1>Hunian Pribadi</h1></div>
 <table class="table table-striped table-responsive">
   <thead>
     <td>ID</td>
