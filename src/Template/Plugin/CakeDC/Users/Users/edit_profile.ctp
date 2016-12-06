@@ -12,7 +12,7 @@
 
 <div class="profile-users row">
     <div class="profile-img col-sm-3 col-xs-4">
-        <?= $this->Html->image(empty($user->avatar) ? $avatarPlaceholder : $user->avatar, ['width' => '180', 'height' => '180']); ?>    
+        <?= $this->Html->image(empty($user->avatar) ? $avatarPlaceholder : $user->avatar, ['width' => '180', 'height' => '180']); ?>
         <h3 class="user-name">
             <?=
             $this->Html->tag(
@@ -26,15 +26,15 @@
         <div class="prof-changepass">
              <?= $this->Html->link(__d('CakeDC/Users', 'Change Password'), ['plugin' => 'CakeDC/Users', 'controller' => 'Users', 'action' => 'changePassword']); ?>
         </div>
-       
+
     </div>
-    
+
     <div class="col-sm-9 col-xs-8">
         <div class="subheader">
             <h2><?= __d('CakeDC/Users', 'Username') ?></h2>
             <p><?= h($user->username) ?>aaaaaaaaa</p>
         </div>
-        
+
         <div class="subheader">
             <h2><?= __d('CakeDC/Users', 'Email') ?></h2>
             <p><?= h($user->email) ?></p>
@@ -95,7 +95,7 @@
   <div class="form-group">
     <label class="col-sm-3 control-label">Tanggal Lahir</label>
     <div class="col-sm-9">
-      <?= $this->Form->input('dob',['label'=>false,'class'=>'form-control']) ?>
+      <?= $this->Form->input('dob',['label'=>false,'class'=>'form-control', 'type'=>'date']) ?>
     </div>
   </div>
   <div class="form-group">
@@ -157,5 +157,5 @@
     <?= $this->Form->button(__d('CakeDC/Users', 'Submit')) ?>
     </div>
   </div>
-    <?= $this->Form->end() ?>    
+    <?= $this->Form->end() ?>
 </div>

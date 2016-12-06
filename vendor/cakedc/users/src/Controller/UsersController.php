@@ -23,6 +23,7 @@ use CakeDC\Users\Controller\Traits\ActivationTrait;
 use CakeDC\Users\Model\Table\UsersTable;
 use Cake\Core\Configure;
 use Cake\ORM\Table;
+use Cake\Utility\Inflector;
 
 /**
  * Users Controller

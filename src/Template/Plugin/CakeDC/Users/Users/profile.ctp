@@ -27,13 +27,13 @@
              <?= $this->Html->link(__d('CakeDC/Users', 'Change Password'), ['plugin' => 'CakeDC/Users', 'controller' => 'Users', 'action' => 'changePassword']); ?>
         </div>
     </div>
-    
+
     <div class="col-sm-9 col-xs-8">
         <div class="subheader">
             <h2><?= __d('CakeDC/Users', 'Username') ?></h2>
             <p><?= h($user->username) ?></p>
         </div>
-        
+
         <div class="subheader">
             <h2><?= __d('CakeDC/Users', 'Email') ?></h2>
             <p><?= h($user->email) ?></p>
@@ -152,9 +152,9 @@
   </div>
 </div>
 <hr>
-<div class="profile-users row">
+<div class="button-wrapper row">
     <div class="col-sm-12">
-      <a href="/profile/edit">Edit</a>
+      <a class="btn" href="/profile/edit">Edit</a>
 
     <?php //$this->Html->link(__d('/profile', 'Edit'), [$user->id]); ?>
     </div>
