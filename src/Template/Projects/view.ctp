@@ -8,7 +8,7 @@
       <div class="view-logo"> <?= $this->Html->image('projects/images/'.$project->logo,array("style"=>"height:100%"),['fullBase' => true]) ?>
       </div>
       <h2><?= h($project->name) ?></h2>
-      <h4><?= '"'.h($project->body).'"' ?></h4> 
+      <h4><?= '"'.h($project->body).'"' ?></h4>
     </div>
     <!-- View Slider -->
     <div class="view-slider col-sm-12 ">
@@ -39,26 +39,23 @@
     <!--Peta Lokasi-->
     <div class="peta-lokasi col-sm-12">
       <div class="block-header"><hr><h1>Peta Lokasi</h1></div>
-      <script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
-        <?php
-          $options = [
-              'zoom' => 2,
-              'location' => ['lat' => $project->latitude, 'lng' => $project->longitude],
-              'apiKey' => 'AIzaSyAfZ02cacrFKjBqUS0lnUSeywf1-B4_iL4',
-              'geolocate' => true,
-              'div' => ['id' => 'someothers']
-              //'map' => ['navOptions' => ['style' => 'SMALL'], 'typeOptions' => ['style' => 'HORIZONTAL_BAR', 'pos' => 'RIGHT_CENTER']]
-          ];
-          $map = $this->GoogleMap->map($options);
-
-          $this->GoogleMap->addMarker(['lat' => $project->latitude, 'lng' => $project->longitude, 'title' => $project->name]);
-
-          // Store the final JS in a HtmlHelper script block
-          $this->GoogleMap->finalize();
-
-          echo $this->fetch('script');
-          echo $map;
-        ?>
+      <div id="map"></div>
+      <script>
+        function initMap() {
+          var uluru = {lat: <?php echo $project->latitude?>, lng: <?php echo $project->longitude ?>};
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 13,
+            center: uluru
+          });
+          var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+          });
+        }
+      </script>
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfZ02cacrFKjBqUS0lnUSeywf1-B4_iL4&callback=initMap">
+      </script>
     </div>
   </div>
 
@@ -71,8 +68,14 @@
       <div class="dena-img">
         <?php // $this->Html->image('projects/filename/'.$project->filename,array("class"=>"img-dena")) ?>
         <?php echo file_get_contents('img/projects/filename/'.$project->filename); ?>
-        
+
       </div>
+      <ul class="dena-info">
+        <li>Keterangan: </li>
+        <li class="tersedia-info"><div class="info-icon">&nbsp;</div> Tersedia</li>
+        <li class="menunggu-info"><div class="info-icon">&nbsp;</div> Menunggu</li>
+        <li class="terjual-info"><div class="info-icon">&nbsp;</div> Terjual</li>
+      </ul>
     </div>
 
     <!-- Unit yang tersedia -->
@@ -102,8 +105,11 @@
           <?php foreach($project->units as $unit2):
             $tab = $unit2->id;
             $content_class = ($tab==$current_tab) ? 'active' : '' ;
+            $tersedia_class = 'tersedia';
+            $menunggu_class = 'menunggu';
+            $terjual_class = 'terjual';
             ?>
-              <div class="tab-pane <?php echo $content_class;?>" id="<?php echo $tab; ?>">
+              <div class="tab-pane <?php echo $content_class;?> <?php echo $tersedia_class;?>" id="<?php echo $tab; ?>">
                 <ul class="col">
                   <li>
                       <h4>Spesifikasi</h4>
@@ -126,7 +132,7 @@
                     ?>
                   </button>
                   </div>
-                <?php endforeach; ?>
+              <?php endforeach; ?>
           </div>
       </div>
     </div>
@@ -152,7 +158,25 @@
           }
         });
       });
-        
+
+      /*ketersediaan location*/
+      $(".tab-content-svg .tab-pane").each(function(){
+        var base = $(this);
+        var tab_id = base.attr('id');
+        $('path').each(function(){
+          var svg_id = $(this).attr('id');
+          var svg_this = $(this);
+          if (tab_id == svg_id) {
+            if(base.hasClass('tersedia')){
+              svg_this.addClass('tersedia');
+            }else if(base.hasClass('menunggu')){
+              svg_this.addClass('menunggu');
+            }else if(base.hasClass('terjual')){
+              svg_this.addClass('terjual');
+            }
+          }
+        });
+      });
     });
   </script>
 

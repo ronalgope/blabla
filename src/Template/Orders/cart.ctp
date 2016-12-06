@@ -13,8 +13,8 @@
 
   <div class="unit-detail row">
     <div class="cara-pembayaran row col-sm-12">
-      <div class="block-header"><hr><h1>Cara Pembayaran</h1></div>  
-      
+      <div class="block-header"><hr><h1>Cara Pembayaran</h1></div>
+
       <div class="table-responsive info-pembayaran">
         <table class="table table-bordered table-striped">
           <colgroup>
@@ -45,10 +45,10 @@
     </div>
 
     <div class="pilih-pembayaran row col-sm-12">
-      <div class="block-header"><hr><h1>Pilih Cara Pembayaran</h1></div>  
+      <div class="block-header"><hr><h1>Pilih Cara Pembayaran</h1></div>
       <?= $this->Form->create($order, ['url' => ['action' => 'createorder']]); ?>
       <?= $this->Form->hidden('units_id',['value'=> $unit->id]); ?>
-
+      <?= $this->Form->hidden('price',['value'=> $unit->price]); ?>
       <!--Pilihan KPR -->
       <div class="pilih-list row">
         <div class="col-sm-12 pilih-top">
@@ -61,12 +61,12 @@
         </div>
         <div class="col-sm-7 row pilih-desc">
           <div class="col-sm-5 col-xs-6">Booking Fee</div>
-          <div class="col-sm-5 col-xs-6 col-sm-offset-2 text-right"><?= $unit->bookingfee ?></div>
+          <div class="col-sm-5 col-xs-6 col-sm-offset-2 text-right"><input type="hidden" name="0bf" value="<?= $unit->bookingfee ?>"/><?= $unit->bookingfee ?></div>
 
           <div class="col-sm-5 col-xs-6">Discount (%)</div>
           <div class="col-sm-2 col-xs-6"> 50% </div>
           <div class="col-sm-5 col-xs-12 text-right">
-            <?php 
+            <?php
               $totaldic = $unit->price*(1/2);
               echo $totaldic;
             ?>
@@ -82,7 +82,7 @@
             <?= $total ?>
           </div>
 
-          
+
 
           <div class="col-sm-5 col-xs-6">Lama angsuran</div>
           <div class="col-sm-2 col-xs-6"> 12<input type="hidden" name="0lamaangsur" value="12"/></div>
@@ -108,7 +108,7 @@
         </div>
         <div class="col-sm-7 row pilih-desc">
           <div class="col-sm-5 col-xs-6">Booking Fee</div>
-          <div class="col-sm-5 col-xs-12 col-sm-offset-2 text-right"><?= $unit->bookingfee ?></div>
+          <div class="col-sm-5 col-xs-12 col-sm-offset-2 text-right"><input type="hidden" name="1bf" value="<?= $unit->bookingfee ?>"/><?= $unit->bookingfee ?></div>
 
           <div class="col-sm-5 col-xs-6">Discount (%)</div>
           <div class="col-sm-2 col-xs-6">50%</div>
@@ -144,7 +144,7 @@
         </div>
         <div class="col-sm-7 row pilih-desc">
           <div class="col-sm-5 col-xs-6">Booking Fee</div>
-          <div class="col-sm-5 col-xs-12 col-sm-offset-2 text-right"><?= $unit->bookingfee ?></div>
+          <div class="col-sm-5 col-xs-12 col-sm-offset-2 text-right"><input type="hidden" name="2bf" value="<?= $unit->bookingfee ?>"/><?= $unit->bookingfee ?></div>
 
           <div class="col-sm-5 col-xs-6">Discount (%)</div>
           <div class="col-sm-2 col-xs-6"> 50% </div>
@@ -155,7 +155,7 @@
             <input type="hidden" name="2dp" value="<?= $total ?>"/>
             <?= $total ?>
           </div>
-          
+
 
           <div class="col-sm-5 col-xs-6">Lama angsuran</div>
           <div class="col-sm-2 col-xs-6"> 12 <input type="hidden" name="2lamaangsur" value="12"/></div>
@@ -182,12 +182,12 @@
        <div class="col-sm-7 row pilih-desc">
           <div class="col-sm-3">Booking Fee</div>
           <div class="col-sm-2">&nbsp; </div>
-          <div class="col-sm-7 text-right"><?= $unit->bookingfee ?></div>
+          <div class="col-sm-7 text-right"><input type="hidden" name="3bf" value="<?= $unit->bookingfee ?>"/><?= $unit->bookingfee ?></div>
 
           <div class="col-sm-5 col-xs-6">Discount (%)</div>
           <div class="col-sm-2 col-xs-6"> 50% </div>
           <div class="col-sm-5 col-xs-12 text-right">
-            <?php 
+            <?php
               $totaldic = $unit->price*(1/2);
               echo $totaldic;
             ?>
@@ -202,7 +202,7 @@
             <input type="hidden" name="3dp" value="<?= $total ?>"/>
             <?= $total ?>
           </div>
-          
+
 
           <div class="col-sm-5 col-xs-6">Lama angsuran</div>
           <div class="col-sm-2 col-xs-6"> 2 <input type="hidden" name="3lamaangsur" value="2"/></div>
@@ -219,7 +219,7 @@
   </div>
 
   <div class="pilih-pembeli">
-    <div class="block-header"><hr><h1>Pilih Pembeli</h1></div>  
+    <div class="block-header"><hr><h1>Pilih Pembeli</h1></div>
     <div>
       <div class="radio">
         <label><input type="radio" name="optradio2" value="0">  <b>Beli untuk diri sendiri</b></label>
