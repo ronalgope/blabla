@@ -42,11 +42,9 @@ use Cake\Core\Configure;
       <div class="col-sm-6">
         <?= $this->Form->input('last_name');?>
       </div>
-
       <div class="col-sm-12">
         <?= $this->Form->input('handphone', ['type' => 'tel']);?>
       </div>
-
       <?php 
         if (Configure::read('Users.Tos.required')) {
             echo $this->Form->input('tos', ['type' => 'checkbox', 'label' => __d('CakeDC/Users', 'Accept TOS conditions?'), 'required' => true]);

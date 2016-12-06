@@ -37,6 +37,15 @@ class OrdersController extends AppController
         $this->set('_serialize', ['orders']);
     }
 
+    public function adminindex()
+    {
+      $this->viewBuilder()->layout('admin');
+        $orders = $this->paginate($this->Orders);
+
+        $this->set(compact('orders'));
+        $this->set('_serialize', ['orders']);
+    }
+
     public function successorder(){
 
     }
@@ -205,6 +214,16 @@ class OrdersController extends AppController
         $this->set('order', $order);
         $this->set('_serialize', ['order']);
     }
+
+    public function adminview($id = null)
+    {
+        $order = $this->Orders->get($id, [
+            'contain' => []
+        ]);
+
+        $this->set('order', $order);
+        $this->set('_serialize', ['order']);
+    }    
 
     /**
      * Add method

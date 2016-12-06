@@ -15,6 +15,8 @@ use Cake\Controller\Component\AuthComponent;
 use Cake\Core\Configure;
 use Cake\Datasource\Exception\InvalidPrimaryKeyException;
 use Cake\Datasource\Exception\RecordNotFoundException;
+use Cake\Utility\Inflector;
+
 
 /**
  * Covers the profile action
@@ -58,6 +60,7 @@ trait ProfileTrait
         $this->set(compact('user', 'isCurrentUser'));
         $this->set('_serialize', ['user', 'isCurrentUser']);
     }
+
 
     public function order($id = null){
       $this->viewBuilder()->layout('dashboard');

@@ -83,4 +83,5 @@ return [
             'action' => ['index','add','index','delete','edit'],
             'allowed' => false,
         ]
-        ];
+    ]
+];

@@ -62,6 +62,7 @@ $cakeDescription = 'Buyhome';
 
   <!-- Main content-->
   <div id="main-container">
+    <?= $this->Flash->render() ?>
     <div class="row profile">
     <div class="col-sm-4 profile-sidebar-wrapper">
       <div class="profile-sidebar">
