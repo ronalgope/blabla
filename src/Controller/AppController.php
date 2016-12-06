@@ -43,7 +43,7 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
-        //$this->loadComponent('CakeDC/Users.UsersAuth');
+        // $this->loadComponent('CakeDC/Users.UsersAuth');
         $userArray = $this->request->session()->read('Auth.User.id');
         $this->loadModel('Users');
         if($userArray){

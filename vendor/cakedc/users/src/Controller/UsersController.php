@@ -39,28 +39,52 @@ class UsersController extends AppController
     use SocialTrait;
     use ActivationTrait;
 
-
-    public function okedit($id = null)
+    //custom index method for admin dashboard
+    //
+    public function index()
     {
+        $this->viewBuilder()->layout('admin');
+
         $table = $this->loadModel();
         $tableAlias = $table->alias();
-        $entity = $table->get($id, [
-            'contain' => []
-        ]);
-        $this->set($tableAlias, $entity);
+        $this->set($tableAlias, $this->paginate($table));
         $this->set('tableAlias', $tableAlias);
         $this->set('_serialize', [$tableAlias, 'tableAlias']);
+    }
+
+    //edit profile for user
+    public function editProfile($id = null)
+    {
+        $this->viewBuilder()->layout('dashboard');
+        $loggedUserId = $this->Auth->user('id');
+        $isCurrentUser = false;
+        if (!Configure::read('Users.Profile.viewOthers') || empty($id)) {
+            $id = $loggedUserId;
+        }
+
+        $table = $this->getUsersTable();
+        $tableAlias = $table->alias();
+        $user = $table->get($id, [
+                'contain' => []
+            ]);
+        $this->set('avatarPlaceholder', Configure::read('Users.Avatar.placeholder'));
+        if ($user->id === $loggedUserId) {
+            $isCurrentUser = true;
+        }
+
+        // $this->set($tableAlias, $entity);
+        // $this->set('tableAlias', $tableAlias);
+        // $this->set('_serialize', [$tableAlias, 'tableAlias']);
         if (!$this->request->is(['patch', 'post', 'put'])) {
             return;
         }
-        $entity = $table->patchEntity($entity, $this->request->data);
+        $entity = $table->patchEntity($user, $this->request->data);
         $singular = Inflector::singularize(Inflector::humanize($tableAlias));
         if ($table->save($entity)) {
             $this->Flash->success(__d('CakeDC/Users', 'The {0} has been saved', $singular));
 
-            return $this->redirect(['action' => 'index']);
+            return $this->redirect('/profile');
         }
         $this->Flash->error(__d('CakeDC/Users', 'The {0} could not be saved', $singular));
     }
-
 }

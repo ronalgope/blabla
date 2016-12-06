@@ -29,5 +29,6 @@ class AppController extends BaseController
         $this->loadComponent('Security');
         $this->loadComponent('Csrf');
         $this->loadComponent('CakeDC/Users.UsersAuth');
+        $this->viewBuilder()->layout('admin');
     }
 }

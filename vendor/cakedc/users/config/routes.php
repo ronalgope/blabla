@@ -26,6 +26,7 @@ Router::connect('/accounts/validate/*', [
         'controller' => 'SocialAccounts',
         'action' => 'validate'
     ]);
-Router::connect('/profile/*', ['plugin' => 'CakeDC/Users', 'controller' => 'Users', 'action' => 'profile']);
+Router::connect('/profile', ['plugin' => 'CakeDC/Users', 'controller' => 'Users', 'action' => 'profile']);
+Router::connect('/profile/edit', ['plugin' => 'CakeDC/Users', 'controller' => 'Users','action'=> 'editProfile']);
 Router::connect('/login', ['plugin' => 'CakeDC/Users', 'controller' => 'Users', 'action' => 'login']);
 Router::connect('/logout', ['plugin' => 'CakeDC/Users', 'controller' => 'Users', 'action' => 'logout']);

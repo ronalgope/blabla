@@ -112,12 +112,17 @@ echo $this->Html->script(array(
           <li class="has_sub"><a href="#"><i class="fa fa-list-alt"></i> Proyek  <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
             <ul>
               <li><?= $this->Html->link('Tambah Proyek',array("controller"=>"Projects","action"=>"add"))?></li>
-              <li><?= $this->Html->link('List Proyek',array("controller"=>"Projects","action"=>"index"))?></li>
+              <li><?= $this->Html->link('List Proyek',array("controller"=>"Projects","action"=>"index", 'plugin'=>false))?></li>
             </ul>
           </li>
           <li class="has_sub"><a href="#"><i class="fa fa-file-o"></i> Order  <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
             <ul>
-              <li><?= $this->Html->link('List Order',array("controller"=>"Orders","action"=>"adminindex"))?></li>
+              <li><?= $this->Html->link('List Order',array("controller"=>"Orders","action"=>"adminindex", 'plugin'=>false))?></li>
+            </ul>
+          </li>
+          <li class="has_sub"><a href="#"><i class="fa fa-file-o"></i> User Manager  <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
+            <ul>
+              <li><?= $this->Html->link('List User',array('plugin'=>'CakeDC/Users',"controller"=>"Users","action"=>"index"))?></li>
             </ul>
           </li>
           <li><a href="#"><i class="fa fa-bar-chart-o"></i> Config</a></li>

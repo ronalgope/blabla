@@ -26,7 +26,6 @@
         <div class="prof-changepass">
              <?= $this->Html->link(__d('CakeDC/Users', 'Change Password'), ['plugin' => 'CakeDC/Users', 'controller' => 'Users', 'action' => 'changePassword']); ?>
         </div>
-       
     </div>
     
     <div class="col-sm-9 col-xs-8">
@@ -155,6 +154,8 @@
 <hr>
 <div class="profile-users row">
     <div class="col-sm-12">
-    <?= $this->Html->link(__d('CakeDC/Users', 'Edit'), ['plugin' => 'CakeDC/Users', 'controller' => 'Users', 'action' => 'edit',$user->id]); ?>
+      <a href="/profile/edit">Edit</a>
+
+    <?php //$this->Html->link(__d('/profile', 'Edit'), [$user->id]); ?>
     </div>
 </div>
